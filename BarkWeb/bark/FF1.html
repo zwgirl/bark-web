@@ -1,0 +1,725 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script>
+    </script>
+    <style type="text/css">
+         
+				.item:hover {
+				  animation: 1s rainbow infinite;
+				}
+			
+				@keyframes rainbow {
+				  0% { background-color: yellow; }
+				  100% { background: blue; }
+				} 
+				
+				.child {
+					padding-left: 10px;
+					border:thin solod red;  
+					font-size: 12px; 
+				}
+			
+    </style><script type = 'text/javascript' src = 'js/stub.js'> </script>
+  <script type = 'text/javascript' src = 'java/lang/buildins.js'> </script>
+  <script type = 'text/javascript' src = 'org/w3c/dom/dom.js'> </script>
+  <script type = 'text/javascript' src = 'java/lang/beans.js'> </script>
+  <script type = 'text/javascript' src = 'java/lang/bindings.js'> </script>
+  <script type = 'text/javascript' >
+    var __this = new ((function(){ 
+      function FF1() {        
+        this._tttt1 = null;
+        this.item = null;
+        this.children = null;
+        this.listeners = new Object();
+        this.select = (function(event){
+          if(event.target.className == "treeItemTitle" && event.target.style.backgroundColor == "blue")
+          {
+            event.target.style.removeProperty("background-color");
+          }
+          else
+          {
+            event.target.style.backgroundColor = "blue";
+          }
+        }).bind(this);
+        this.nodeClick = (function(event){
+          if(this.children.style.display == "none")
+          {
+            this.children.style.display = "block";
+          }
+          else
+          {
+            this.children.style.display = "none";
+          }
+        }).bind(this);
+        this.sample = null;
+        this.index = 0;
+        this._person = new (__lc('Person'))("Smith", 98);
+        this._options = null;
+        this._root = new (__lc('Person'))("root", 10);
+        this._childs = new (__lc('java.util.ObservableCollection'))("1");
+        this.addChild = (function(event){
+          this.child.add(new (__lc('Person'))("child1", 3));
+          this.root.children.add(new (__lc('Person'))("新增树节点!", 10));
+          this.sample.children.add(new (__lc('Person'))("KJKKKKKK", 10));
+        }).bind(this);
+        this.replaceChilds = (function(event){
+          var c1 = new (__lc('java.util.ObservableCollection'))("1");
+          c1.add(new (__lc('Person'))("child11", 22));
+          c1.add(new (__lc('Person'))("child1", 3));
+          this.child = c1;
+        }).bind(this);
+        this.deleteChild = (function(event){
+          if(this.child.size > 0)
+          {
+            this.child.removeAt(0);
+          }
+        }).bind(this);
+        this._style = "5px solid red";
+        this.click = (function(event){
+          this.name = "tom" + this.index ++;
+          alert(event.target.toString());
+          var r = __lc("org.bark.remoting.FirstService").prototype.sayHello("212121212");
+          alert(r.content);
+        }).bind(this);
+        this._name1 = "tom";
+        this.test = (function(event){
+          if(event.target != document.body)
+          {
+            return;
+          }
+          this.name = this.name + this.name;
+        }).bind(this);
+        this.returnNav = (function(event){
+          var keyEvt = event;
+          if(keyEvt != undefined && keyEvt.target != undefined)
+          {
+            var srcEle = keyEvt.target;
+            if(keyEvt.keyCode == 13)
+            {
+              keyEvt.keyCode = keyEvt.charCode = 9;
+            }
+          }
+        }).bind(this);
+        var g = "wqwqwq";
+        var i1 = 10;
+        this._options = new (__lc('java.util.ArrayList'))("2");
+        for (var i = 0; i < 3; i ++) 
+        {
+          this._options.add(new (__lc('Person'))("Smith" + i, 98));
+        }
+        var coll = new (__lc('java.util.ArrayList'))("2");
+        var __coll = coll, __i = __coll.iterator();
+        while(__i.hasNext()) {
+          var o = __i.next();
+          var __coll0 = coll, __i0 = __coll0.iterator();
+          while(__i0.hasNext()) {
+            var o1 = __i0.next();
+            i1 = g.length;
+          }
+        }
+        var __coll0 = coll, __i0 = __coll0.iterator();
+        while(__i0.hasNext()) {
+          var o = __i0.next();
+        }
+        var os = new Array();
+        var __coll0 = os
+        for(var __i0 = 0; __i0 < __coll0.length; __i0++) {
+          var s = __coll0[__i0];
+          var ll = s.length;
+        }
+        for (var i = 0; i < 10; i ++) 
+        {
+          var p = new (__lc('Person'))("孩子" + i, i);
+          this.root.children.add(p);
+          for (var j = 0; j < 3; j ++) 
+          {
+            if(j == 2)
+            {
+              p.children.add(this.sample = new (__lc('Person'))("孙子" + i + "_" + j, j));
+            }
+            p.children.add(new (__lc('Person'))("孙子" + i + "_" + j, j));
+          }
+        }
+      }
+      FF1.prototype.__proto__ = Object.prototype;
+      __cache["FF1"] = FF1;
+      Object.defineProperty(FF1.prototype, "person", {
+        get : function() {
+          return this._person;
+        }
+      });
+      Object.defineProperty(FF1.prototype, "options", {
+        get : function() {
+          return this._options;
+        }
+      });
+      Object.defineProperty(FF1.prototype, "root", {
+        get : function() {
+          return this._root;
+        }
+      });
+      Object.defineProperty(FF1.prototype, "child", {
+        get : function() {
+          return this._childs;
+        }, 
+        set : function(value) {
+          var oldValue = this._childs;
+          this._childs = value;
+          if(oldValue != value)
+          {
+            this.notify(this, new (__lc('java.lang.PropertyChangeEvent'))("child"));
+          }
+        }
+      });
+      Object.defineProperty(FF1.prototype, "style", {
+        get : function() {
+          return this._style;
+        }, 
+        set : function(value) {
+          var oldValue = this._style;
+          this._style = value;
+          if(oldValue != value)
+          {
+            this.notify(this, new (__lc('java.lang.PropertyChangeEvent'))("style"));
+          }
+        }
+      });
+      Object.defineProperty(FF1.prototype, "name", {
+        get : function() {
+          return this._name1;
+        }, 
+        set : function(value) {
+          var oldValue = this._name1;
+          this._name1 = value;
+          if(oldValue != value)
+          {
+            this.notify(this, new (__lc('java.lang.PropertyChangeEvent'))("name"));
+          }
+        }
+      });
+      FF1.prototype.notify = function(source, event){
+        var handlers = this.listeners[event.propertyName];
+        if(handlers != undefined)
+        {
+          handlers.forEach((function(value, index, array){
+            value(source, event);
+          }).bind(this));
+        }
+      };
+      FF1.prototype.f = function(){
+      };
+      FF1.prototype.addPropertyChangeListener = function(propName, handler){
+        var handlers = this.listeners[propName];
+        if(handlers == undefined)
+        {
+          handlers = new Array();
+          this.listeners[propName] = handlers;
+        }
+        handlers.push(handler);
+      };
+      FF1.prototype.removePropertyChangeListener = function(propName, handler){
+        var handlers = this.listeners[propName];
+        if(handlers != undefined)
+        {
+          handlers.forEach((function(value, index, array){
+            if(value === handler)
+            {
+              handlers.splice(index, 1);
+            }
+          }).bind(this));
+        }
+      };
+      FF1.prototype.draw = function(){
+        var mycanvas = document.getElementById("myCanvas");
+        var mycontext = mycanvas.getContext("2d");
+        var x;
+        var y;
+        var x2;
+        var y2;
+        var r;
+        var g;
+        var b;
+        var line = (function(){
+          x = Math.floor(Math.random() * 190) + Math.floor(Math.random() * 190);
+          y = Math.floor(Math.random() * 190) + Math.floor(Math.random() * 190);
+          x2 = Math.floor(Math.random() * 190) + Math.floor(Math.random() * 190);
+          y2 = Math.floor(Math.random() * 190) + Math.floor(Math.random() * 190);
+          r = Math.floor(Math.random() * 255);
+          g = Math.floor(Math.random() * 255);
+          b = Math.floor(Math.random() * 255);
+          mycontext.moveTo(x, y);
+          mycontext.lineTo(x2, y2);
+          mycontext.strokeStyle = "rgb(" + r + "," + g + "," + b + ")";
+          mycontext.lineWidth = Math.floor(Math.random() * 6);
+          mycontext.stroke();
+          mycontext.restore();
+        }).bind(this);
+        setInterval(line, 100);
+      };
+      FF1.prototype.__class = new (__lc('java.lang.Class'))("FF1", FF1, Object.prototype.__class, [__lc("java.lang.INotifyPropertyChanged").prototype.__class], 1);
+      return  FF1;
+    })())();
+  </script>
+  </head>
+  <body >
+  <script type = 'text/javascript' >
+  var _c = document.createElement.bind(document);
+  var _a = Node.prototype.appendChild;
+    (function(_p){
+      var _n = _c("canvas");
+      _p.appendChild(_n);
+      _n.id = "myCanvas";
+      _n.width = "578";
+      _n.height = "200";
+      var _n = _c("aside");
+      _p.appendChild(_n);
+      _n.id = "gallery";
+      (function(_p){
+        var _n = _c("p");
+        _p.appendChild(_n);
+        _n.className = "photonav";
+        (function(_p){
+          var _n = _c("a");
+          _p.appendChild(_n);
+          _n.id = "photonext";
+          _n.href = "casey.html";
+          (function(_p){
+            _p.appendChild(document.createTextNode(" Next > "));
+          }).call(__this, _n);
+          var _n = _c("a");
+          _p.appendChild(_n);
+          _n.id = "photoprev";
+          _n.href = "adagio.html";
+          (function(_p){
+            _p.appendChild(document.createTextNode(" < Previous "));
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("figure");
+        _p.appendChild(_n);
+        _n.id = "photo";
+        (function(_p){
+          var _n = _c("img");
+          _p.appendChild(_n);
+          _n.id = "photoimg";
+          _n.src = "gallery/1984-casey-500.jpg";
+          _n.alt = "Fer";
+          _n.width = "500";
+          _n.height = "375";
+          var _n = _c("figcaption");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode(" Fer, 1972 "));
+          }).call(__this, _n);
+        }).call(__this, _n);
+      }).call(__this, _n);
+      _p.appendChild(document.createTextNode("\r\n	\r\n			  \r\n			for dsddsd if do\r\n				\r\n		"));
+      var _n = _c("p");
+      _p.appendChild(_n);
+      _n.style.border = "5px solid red";
+      (function(_p){
+        _p.appendChild(document.createTextNode(" \r\n			asasasa\r\n			"));
+        var _n = _c("br");
+        _p.appendChild(_n);
+        var _n = document.createTextNode('');
+        _p.appendChild(_n);
+        _n.data = new (__lc("java.lang.Binding"))({property : "style", mode : __lc("java.lang.BindingMode").OneWay}).provideValue(_n, "data", null);
+      }).call(__this, _n);
+      var _n = _c("p");
+      _p.appendChild(_n);
+      _n.style.border = new (__lc("java.lang.Binding"))({property : "style", mode : __lc("java.lang.BindingMode").OneWay}).provideValue(_n, "style", "border");
+      (function(_p){
+        _p.appendChild(document.createTextNode("\r\n			asasasa\r\n			"));
+        var _n = _c("br");
+        _p.appendChild(_n);
+        var _n = document.createTextNode('');
+        _p.appendChild(_n);
+        _n.data = new (__lc("java.lang.Binding"))({property : "style", mode : __lc("java.lang.BindingMode").OneWay}).provideValue(_n, "data", null);
+      }).call(__this, _n);
+      var _n = _c("table");
+      _p.appendChild(_n);
+      (function(_p){
+        var _n = _c("caption");
+        _p.appendChild(_n);
+        var _n = _c("thead");
+        _p.appendChild(_n);
+        _n["name"] = "_tttt1";
+        this._tttt1 = _n;
+        var _n = _c("tbody");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("div");
+          _p.appendChild(_n);
+          _n.itemsConfig = new (__lc("java.lang.ItemsConfig"))({path : "child", itemTemplate : __lc("SelectTemplate1").prototype.__class}).provideValue(_n, "itemsConfig", null);
+          var _n = _c("button");
+          _p.appendChild(_n);
+          _n.addEventListener('click', this.addChild, false);
+          (function(_p){
+            _p.appendChild(document.createTextNode(" add "));
+          }).call(__this, _n);
+          var _n = _c("button");
+          _p.appendChild(_n);
+          _n.addEventListener('click', this.deleteChild, false);
+          (function(_p){
+            _p.appendChild(document.createTextNode(" delete "));
+          }).call(__this, _n);
+          var _n = _c("input");
+          _p.appendChild(_n);
+          _n.value = "中华人民共和国1";
+          _n.id = "1";
+          var _n = _c("tr");
+          _p.appendChild(_n);
+          var _t = new (__lc("FirstTemplate"))();
+          _t.create(_n);
+          _c.template = _t;
+          (function(_p){
+            var _n = _c("td");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("input");
+              _p.appendChild(_n);
+              _n.id = "2";
+              _n.value = new (__lc("java.lang.Binding"))({property : "style", mode : __lc("java.lang.BindingMode").TwoWay, updateSourceTrigger : __lc("java.lang.UpdateSourceTrigger").PropertyChanged}).provideValue(_n, "value", null);
+              _n.addEventListener('keydown', this.returnNav, false);
+            }).call(__this, _n);
+            var _n = _c("td");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("select");
+              _p.appendChild(_n);
+              _n.itemsConfig = new (__lc("java.lang.ItemsConfig"))({path : "options", itemTemplate : __lc("SelectTemplate").prototype.__class}).provideValue(_n, "itemsConfig", null);
+              (function(_p){
+                _p.appendChild(document.createTextNode("\r\n			 		Test \r\n			 	"));
+              }).call(__this, _n);
+            }).call(__this, _n);
+            var _n = _c("td");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("div");
+              _p.appendChild(_n);
+              _n.itemsConfig = new (__lc("java.lang.ItemsConfig"))({path : "options", itemTemplate : __lc("SelectTemplate1").prototype.__class}).provideValue(_n, "itemsConfig", null);
+              (function(_p){
+                _p.appendChild(document.createTextNode("\r\n			 		Test\r\n			 	"));
+              }).call(__this, _n);
+            }).call(__this, _n);
+            var _n = _c("button");
+            _p.appendChild(_n);
+            _n.addEventListener('click', this.replaceChilds, false);
+            (function(_p){
+              _p.appendChild(document.createTextNode(" setup "));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("tr");
+          _p.appendChild(_n);
+          _n.dataContext = new (__lc("java.lang.DataPath"))({mode : __lc("java.lang.PathMode").Relative, property : "person"}).provideValue(_n, "dataContext", null);
+          (function(_p){
+            var _n = _c("td");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("input");
+              _p.appendChild(_n);
+              _n.id = "3";
+              _n.value = new (__lc("java.lang.Binding"))({property : "name", mode : __lc("java.lang.BindingMode").TwoWay, updateSourceTrigger : __lc("java.lang.UpdateSourceTrigger").PropertyChanged}).provideValue(_n, "value", null);
+            }).call(__this, _n);
+            var _n = _c("td");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("input");
+              _p.appendChild(_n);
+              _n.id = "4";
+              _n.value = new (__lc("java.lang.Binding"))({property : "age", mode : __lc("java.lang.BindingMode").TwoWay, updateSourceTrigger : __lc("java.lang.UpdateSourceTrigger").PropertyChanged}).provideValue(_n, "value", null);
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("tr");
+          _p.appendChild(_n);
+          var _n = _c("tr");
+          _p.appendChild(_n);
+          var _n = _c("tr");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("td");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("button");
+              _p.appendChild(_n);
+              _n.value = "change";
+              _n.addEventListener('click', this.click, false);
+              (function(_p){
+                _p.appendChild(document.createTextNode(" Test "));
+              }).call(__this, _n);
+            }).call(__this, _n);
+          }).call(__this, _n);
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("form");
+      _p.appendChild(_n);
+      (function(_p){
+        _p.appendChild(document.createTextNode(" 0\r\n			"));
+        var _n = _c("input");
+        _p.appendChild(_n);
+        _n.type = "range";
+        _n.id = "a";
+        _n.value = "50";
+        _p.appendChild(document.createTextNode(" 100\r\n	        + "));
+        var _n = _c("input");
+        _p.appendChild(_n);
+        _n.type = "number";
+        _n.id = "b";
+        _n.value = "50";
+        _p.appendChild(document.createTextNode("\r\n			="));
+        var _n = _c("output");
+        _p.appendChild(_n);
+        _n.name = "x";
+        _n.htmlFor = "a b";
+      }).call(__this, _n);
+      var _n = _c("div");
+      _p.appendChild(_n);
+      _n.className = "child";
+      _n.dataContext = new (__lc("java.lang.DataPath"))({mode : __lc("java.lang.PathMode").Relative, property : "root"}).provideValue(_n, "dataContext", null);
+      (function(_p){
+        var _n = _c("span");
+        _p.appendChild(_n);
+        _n["name"] = "item";
+        this.item = _n;
+        _n.className = "hvr-fade";
+        (function(_p){
+          var _n = _c("img");
+          _p.appendChild(_n);
+          _n.src = "img/expanded.gif";
+          _n.className = "trrItemNode";
+          _n.addEventListener('click', this.nodeClick, false);
+          var _n = _c("span");
+          _p.appendChild(_n);
+          _n.addEventListener('click', this.select, false);
+          _n.className = "treeItemTitle";
+          (function(_p){
+            var _n = document.createTextNode('');
+            _p.appendChild(_n);
+            _n.data = new (__lc("java.lang.Binding"))({property : "name", mode : __lc("java.lang.BindingMode").OneWay}).provideValue(_n, "data", null);
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("div");
+        _p.appendChild(_n);
+        _n["name"] = "children";
+        this.children = _n;
+        _n.className = "children";
+        _n.itemsConfig = new (__lc("java.lang.ItemsConfig"))({path : "children", itemTemplate : __lc("ChildTemplate").prototype.__class}).provideValue(_n, "itemsConfig", null);
+      }).call(__this, _n);
+      var _n = _c("input");
+      _p.appendChild(_n);
+      _n.value = "@12121";
+      (function(_p){
+        var _n = _c("div");
+        _p.appendChild(_n);
+        _n.style = "position:absolute;width:100px;height:100px;left:10px;top:10px;background:#000";
+        (function(_p){
+          _p.appendChild(document.createTextNode("\r\n				AAAAAAAAAAAAAAAAAAAAAAAA\r\n			"));
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("form");
+      _p.appendChild(_n);
+      _n.method = "post";
+      _n.enctype = "application/x-www-form-urlencoded";
+      _n.action = "https://pizza.example.com/order.cgi";
+      (function(_p){
+        var _n = _c("p");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("label");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("Customer name: "));
+            var _n = _c("input");
+            _p.appendChild(_n);
+            _n.name = "custname";
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("p");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("label");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("Telephone: "));
+            var _n = _c("input");
+            _p.appendChild(_n);
+            _n.type = "tel";
+            _n.name = "custtel";
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("p");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("label");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("E-mail address: "));
+            var _n = _c("input");
+            _p.appendChild(_n);
+            _n.type = "email";
+            _n.name = "custemail";
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("fieldset");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("legend");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode(" Pizza Size "));
+          }).call(__this, _n);
+          var _n = _c("p");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("label");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("input");
+              _p.appendChild(_n);
+              _n.type = "radio";
+              _n.name = "size";
+              _n.value = "small";
+              _p.appendChild(document.createTextNode(" Small "));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("p");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("label");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("input");
+              _p.appendChild(_n);
+              _n.type = "radio";
+              _n.name = "size";
+              _n.value = "medium";
+              _p.appendChild(document.createTextNode(" Medium "));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("p");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("label");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("input");
+              _p.appendChild(_n);
+              _n.type = "radio";
+              _n.name = "size";
+              _n.value = "large";
+              _p.appendChild(document.createTextNode(" Large "));
+            }).call(__this, _n);
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("fieldset");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("legend");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode(" Pizza Toppings "));
+          }).call(__this, _n);
+          var _n = _c("p");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("label");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("input");
+              _p.appendChild(_n);
+              _n.type = "checkbox";
+              _n.name = "topping";
+              _n.value = "bacon";
+              _p.appendChild(document.createTextNode(" Bacon "));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("p");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("label");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("input");
+              _p.appendChild(_n);
+              _n.type = "checkbox";
+              _n.name = "topping";
+              _n.value = "cheese";
+              _p.appendChild(document.createTextNode(" Extra Cheese "));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("p");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("label");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("input");
+              _p.appendChild(_n);
+              _n.type = "checkbox";
+              _n.name = "topping";
+              _n.value = "onion";
+              _p.appendChild(document.createTextNode(" Onion "));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("p");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("label");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("input");
+              _p.appendChild(_n);
+              _n.type = "checkbox";
+              _n.name = "topping";
+              _n.value = "mushroom";
+              _p.appendChild(document.createTextNode(" Mushroom "));
+            }).call(__this, _n);
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("p");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("label");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("Preferred delivery time: "));
+            var _n = _c("input");
+            _p.appendChild(_n);
+            _n.type = "text";
+            _n.min = "11:00";
+            _n.max = "21:00";
+            _n.step = "900";
+            _n.name = "delivery";
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("p");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("label");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("Delivery instructions: "));
+            var _n = _c("textarea");
+            _p.appendChild(_n);
+            _n.name = "comments";
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("p");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("button");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("Submit order"));
+          }).call(__this, _n);
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("script");
+      _p.appendChild(_n);
+      (function(_p){
+        _p.appendChild(document.createTextNode("\r\n    	__this.draw();\r\n  "));
+      }).call(__this, _n);
+    }).call(__this, document.body);</script>
+  </body>
+</html>
