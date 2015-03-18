@@ -1,5 +1,8 @@
 package org.bark.remoting;
 
+import org.bark.test.FirstService;
+import org.bark.test.Result;
+
 public class FirstServiceImpl implements FirstService{
 
 	@Override

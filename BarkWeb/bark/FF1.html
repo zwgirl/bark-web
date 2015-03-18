@@ -80,8 +80,6 @@
         this.click = (function(event){
           this.name = "tom" + this.index ++;
           alert(event.target.toString());
-          var r = __lc("org.bark.remoting.FirstService").prototype.sayHello("212121212");
-          alert(r.content);
         }).bind(this);
         this._name1 = "tom";
         this.test = (function(event){
@@ -263,7 +261,7 @@
     })())();
   </script>
   </head>
-  <body >
+  <body onclick="__this.test(event);">
   <script type = 'text/javascript' >
   var _c = document.createElement.bind(document);
   var _a = Node.prototype.appendChild;
@@ -686,7 +684,7 @@
             _p.appendChild(document.createTextNode("Preferred delivery time: "));
             var _n = _c("input");
             _p.appendChild(_n);
-            _n.type = "text";
+            _n.type = "time";
             _n.min = "11:00";
             _n.max = "21:00";
             _n.step = "900";

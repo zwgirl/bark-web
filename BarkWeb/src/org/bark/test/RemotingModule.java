@@ -1,4 +1,6 @@
-package org.bark.remoting;
+package org.bark.test;
+
+import org.bark.remoting.FirstServiceImpl;
 
 import com.google.inject.Binder;
 import com.google.inject.Module;

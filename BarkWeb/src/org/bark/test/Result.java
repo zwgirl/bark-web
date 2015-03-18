@@ -1,4 +1,4 @@
-package org.bark.remoting;
+package org.bark.test;
 
 @RemotingBean
 public class Result {

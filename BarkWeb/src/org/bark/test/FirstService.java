@@ -1,4 +1,4 @@
-package org.bark.remoting;
+package org.bark.test;
 
 @RemotingService
 public interface FirstService {

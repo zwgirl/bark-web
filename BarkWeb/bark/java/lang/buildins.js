@@ -123,6 +123,18 @@
 })();
 (function(){ 
   __cache["java.lang.Object"] = Object;
+  Object.registerPrimitiveClass = function(){
+		var c = __lc('java.lang.Class');
+		__cache["<B"] = new c("<B", null, Object.prototype.__class, [], 0x21);
+		__cache["<C"] = new c("<C", null, Object.prototype.__class, [], 0x21);
+		__cache["<S"] = new c("<B", null, Object.prototype.__class, [], 0x21);
+		__cache["<I"] = new c("<B", null, Object.prototype.__class, [], 0x21);
+		__cache["<L"] = new c("<B", null, Object.prototype.__class, [], 0x21);
+		__cache["<F"] = new c("<B", null, Object.prototype.__class, [], 0x21);
+		__cache["<D"] = new c("<B", null, Object.prototype.__class, [], 0x21);
+		__cache["<Z"] = new c("<B", null, Object.prototype.__class, [], 0x21);
+		
+	}
   Object.prototype.hashCode = function(){
     return 0;
   };
@@ -144,6 +156,9 @@
   Object.equals = function(left, right){
     return false;
   };
+  {
+    Object.registerPrimitiveClass.call(this);
+  }
   Object.prototype.__class = new (__lc('java.lang.Class'))("java.lang.Object", Object, null, [], 1);
   return  Object;
 })();
