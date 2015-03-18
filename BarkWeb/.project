@@ -3,7 +3,6 @@
 	<name>BarkWeb</name>
 	<comment></comment>
 	<projects>
-		<project>Fragment</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

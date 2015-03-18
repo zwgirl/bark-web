@@ -173,14 +173,10 @@ LarkInput.prototype.readArray = function(object, references, array){
 	return array;
 };
 
-function __invoke(addr, remotingModel){
+function __invoke(remotingModel){
 	var xhr = new XMLHttpRequest();
-//	xhr.open('post', "http://localhost:8080/BarkWeb/rpc", false);
 	xhr.open('post', "/rpc", false);
 //	xhr.overrideMimeType("application/x-www-form-urlencoded");   
-	
-
-    
 //	xhr.overrideMimeType("multipart/form-data");
 	
 	var lo = new LarkOutput();

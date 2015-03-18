@@ -2,9 +2,6 @@
     <wb-module deploy-name="BarkWeb">
         <wb-resource deploy-path="/" source-path="/bark" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <dependent-module archiveName="Fragment.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Fragment/Fragment">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="java-output-path" value="/BarkWeb/build/classes"/>
         <property name="context-root" value="/"/>
     </wb-module>

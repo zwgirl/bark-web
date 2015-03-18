@@ -56,16 +56,7 @@ public class RemotingServiceServlet extends HttpServlet{
 			Injector injector = (Injector) this.getServletContext().getAttribute(BarkServletContextListener.INJECTOR);
 			Object service = injector.getInstance(serviceClass);
 			
-			Class<?>[] parClass = new Class[rm.getParameters().length];
-			for(int i = 0, length = rm.getParameters().length; i< length; i++){
-				Object par = rm.getParameters()[i];
-				if(par == null){
-					parClass[i] = null;
-				} else {
-					parClass[i] = rm.getParameters()[0].getClass();
-				}
-			}
-			Method method = serviceClass.getMethod(rm.getMethodName(), parClass);
+			Method method = serviceClass.getMethod(rm.getMethodName(), (Class<?>[]) rm.getParameterTypes());
 			Object result = method.invoke(service, rm.getParameters());
 			
 	        res.setStatus(HttpServletResponse.SC_OK);
@@ -74,7 +65,7 @@ public class RemotingServiceServlet extends HttpServlet{
 				res.getWriter().println("Hello World!");
 			} else {
 		        LarkOutput lo = new LarkOutput();
-		        JsonArray array = lo.writeObject1(result);
+		        JsonArray array = lo.writeObject(result);
 		        
 		        JsonWriter writer = isStream
 	 	                ? wf.createWriter(res.getOutputStream())
