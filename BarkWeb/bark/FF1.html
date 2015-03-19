@@ -80,6 +80,8 @@
         this.click = (function(event){
           this.name = "tom" + this.index ++;
           alert(event.target.toString());
+          var r = __lc("org.bark.test.FirstService").prototype.sayHello("Tom", null, null);
+          alert(r.content);
         }).bind(this);
         this._name1 = "tom";
         this.test = (function(event){

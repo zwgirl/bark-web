@@ -3,10 +3,14 @@ package org.bark.test;
 @RemotingBean
 public class Result {
   private String _content;
+  
+  public Result(){
+	  
+  }
+  public Result(String message){
+	  this._content = message;
+  }
 
-  public Result(String content) {
-	this._content = content;
-}
   public String  getContent() {
     return this._content;
   }

@@ -61,18 +61,40 @@ LarkOutput.prototype.write = function(obj){
 };
 
 LarkOutput.prototype.writeObject0 = function(obj, handlers){
-	var r = {"__clazz":obj.getClass().name};
-	if(obj.getClass() === Number.prototype.__class){
+	var clazz = obj.getClass();
+	var r = {"__clazz":clazz.name};
+	if(clazz === Number.prototype.__class){
 		r["value"] = obj;
-	} else if(obj.getClass() === String.prototype.__class){
+	} else if(clazz === String.prototype.__class){
 		r["value"] = obj;
-	} else if(obj.getClass() === Date.prototype.__class){
+	} else if(clazz === Date.prototype.__class){
 		r["value"] = obj;
-	} else if(obj.getClass() === Number.prototype.__class){
+	} else if(clazz === Number.prototype.__class){
 		r["value"] = obj;
-	} else if(obj.getClass().isArray){
+	} else if(clazz.name === "java.lang.Byte"){
+		r["value"] = obj;
+	} else if(clazz.name === "java.lang.Sort"){
+		r["value"] = obj;
+	} else if(clazz.name === "java.lang.Character"){
+		r["value"] = obj;
+	} else if(clazz.name === "java.lang.Integer"){
+		r["value"] = obj;
+	} else if(clazz.name === "java.lang.Long"){
+		r["value"] = obj;
+	} else if(clazz.name === "java.lang.Float"){
+		r["value"] = obj;
+	} else if(clazz.name === "java.lang.Double"){
+		r["value"] = obj;
+	} else if(clazz.name === "java.lang.Boolean"){
+		r["value"] = obj;
+	} else if(clazz.name === "java.lang.Class"){
+		var r = {"__clazz":"java.lang.Class"};
+		r["value"] = obj.name;
+	} else if(clazz.isEnum){
+		r["value"] = obj == null ? null : obj.name;
+	} else if(clazz.isArray){
 		r["value"] = obj == null ? null : handlers.shared(obj);
-	} else if(obj.getClass() === Object.prototype.__class){
+	} else if(clazz === Object.prototype.__class){
 		r["value"] = obj == null ? null : handlers.shared(obj);
 	} else {
 		return obj.__proto__.__writeObject(obj, handlers);
@@ -134,9 +156,26 @@ LarkInput.prototype.readObject = function (json){
 				references[i] = array[i]["value"];
 			} else if(clazz == Date){
 				references[i] = new Date(array[i]["value"]);
+			} else if(clazz.name === "java.lang.Byte"){
+				references[i] = new (__lc("java.lang.Byte"))(array[i]["value"]);
+			} else if(clazz.name === "java.lang.Short"){
+				references[i] = new (__lc("java.lang.Short"))(array[i]["value"]);
+			} else if(clazz.name === "java.lang.Character"){
+				references[i] = new (__lc("java.lang.Character"))(array[i]["value"]);
+			} else if(clazz.name === "java.lang.Integer"){
+				references[i] = new (__lc("java.lang.Integer"))(array[i]["value"]);
+			} else if(clazz.name === "java.lang.Long"){
+				references[i] = new (__lc("java.lang.Long"))(array[i]["value"]);
+			} else if(clazz.name === "java.lang.Float"){
+				references[i] = new (__lc("java.lang.Float"))(array[i]["value"]);
+			} else if(clazz.name === "java.lang.Double"){
+				references[i] = new (__lc("java.lang.Double"))(array[i]["value"]);
+			} else if(clazz.name === "java.lang.Boolean"){
+				references[i] = new Boolean(array[i]["value"]);
+			} else if(clazz.name === "java.lang.Class"){
+				references[i] = __lc(array[i]["value"]).prototype.__class;
 			} else if(clazz.prototype.__class.isArray){
 				references[i] = [];
-	//			this.readArray(array[i], references, references[i]);
 			} else if(clazz.prototype.__class.isEnum){
 				references[i] = clazz.factory.valueOf(array[i]["value"]);
 			} else {
