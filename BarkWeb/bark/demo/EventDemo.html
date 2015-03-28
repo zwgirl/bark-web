@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      CSS3/Lark Clock demo
+    </title><script type = 'text/javascript' src = '/js/stub.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/buildins.js'> </script>
+  <script type = 'text/javascript' src = '/org/w3c/dom/dom.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/beans.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/bindings.js'> </script>
+  <script type = 'text/javascript' >
+    var __this = new ((function(){ 
+      function EventDemo() {        
+        this.position = null;
+        this.OnMouseenter = (function(event){
+        }).bind(this);
+        this.OnMouseover = (function(event){
+          this.position.textContent = "mouse position: x= " + event.x + "; y= " + event.y;
+        }).bind(this);
+      }
+      EventDemo.prototype.__proto__ = Object.prototype;
+      __cache["demo.EventDemo"] = EventDemo;
+      EventDemo.prototype.__class = new (__lc('java.lang.Class'))("demo.EventDemo", EventDemo, Object.prototype.__class, [], 1);
+      return  EventDemo;
+    })())();
+  </script>
+  </head>
+  <body>
+  <script type = 'text/javascript' >
+  var _c = document.createElement.bind(document);
+  var _a = Node.prototype.appendChild;
+    (function(_p){
+      var _n = _c("div");
+      _p.appendChild(_n);
+      _n.onmouseenter = function (){alert('me');};
+      _n.addEventListener('mouseenter', this.OnMouseenter, false);
+      _n.addEventListener('mousemove', this.OnMouseover, false);
+      (function(_p){
+        _p.appendChild(document.createTextNode("\r\n			import org.w3c.html.head;\r\n			import org.w3c.html.html;\r\n			import org.w3c.html.meta;\r\n			import org.w3c.html.title;\r\n			"));
+      }).call(__this, _n);
+      var _n = _c("span");
+      _p.appendChild(_n);
+      _n["name"] = "position";
+      this.position = _n;
+      (function(_p){
+        _p.appendChild(document.createTextNode(" mouse position: "));
+      }).call(__this, _n);
+    }).call(__this, document.body);</script>
+  </body>
+</html>

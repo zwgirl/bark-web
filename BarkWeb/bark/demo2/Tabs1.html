@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8"/>
+      <title>练习1</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <style type="text/css">
+            *{margin:0;padding:0;}
+            .box{margin:50px auto;width:344px;}
+            ul{overflow:hidden;list-style-type:none;background-color:#a48080;}
+            li{float:left;margin:0 3px;width:80px;text-align:center;height:20px;line-height:20px;}
+            a.sp{background-color:#8a5d62;}
+            a{font-size:14px;text-decoration:none;color:#fff;display:block;font-weight:bold;}
+            .box p{display:none;font-size:14px;text-align:center;padding-top:5px;line-height:24px;background-color:#f9f2e0;}
+            .box p.sp{display:block;}
+     </style>
+     <script type="text/javascript">
+           function switchTab(){
+                var ul = document.getElementsByTagName_r("a");
+                for(var i=0; i<ul.length; i++){
+                     ul[i].onclick = text;
+                 }
+            }
+           function text(){
+                var ul = document.getElementsByTagName_r("a");
+                var p = document.getElementsByTagName_r("p");
+                for(var i=0; i<ul.length; i++){
+                     if(ul[i]==this){
+                          ul[i].className = "sp";
+                          p[i].className = "sp";
+                          }else{
+                               ul[i].className = "";
+                               p[i].className = "";
+                          }
+                     }
+                 }
+      </script>
+</head>
+<body>
+     <div class="box">
+          <ul>
+               <li><a id="choice1" onclick="switchTab1()" class="sp" href="#">爱的主场秀</a></li>
+               <li><a id="choice2" onclick="switchTab2()" href="#">撕夜</a></li>
+               <li><a id="choice3" onclick="switchTab3()" href="#">最重要的决定</a></li>
+               <li><a id="choice4" onclick="switchTab4()" href="#">画情</a></li>
+         </ul>
+         <p id="show1" class="sp">爱的主场秀<br/>罗志祥<br/>气温太躁动难过<br/>……</p>
+         <p id="show2">撕夜<br/>阿杜<br/>我把梦撕了一页<br/>不懂明天该怎么写<br/>……</p>
+         <p id="show3">最重要的决定<br/>范玮琪<br/>我常在想应该再也找不到<br/>……</p>
+         <p id="show4">画情<br/>姚贝娜<br/>留住你一面画在我心间<br/>……</p>
+     </div>
+</body>
+</html>

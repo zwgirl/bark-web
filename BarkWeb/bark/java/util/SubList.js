@@ -42,13 +42,13 @@
     this._size = (toIndex - fromIndex);
   };
   SubList.prototype.addAll = function(c){
-    return this.addAll(this._size, c);
+    return this.addAllAt(this._size, c);
   };
   SubList.prototype.addAllAt = function(index, c){
     rangeCheckForAdd.call(this, index);
     var cSize = c.size;
     if(cSize == 0) return false;
-    this.l.addAll(this.offset + index, c);
+    this.l.addAllAt(this.offset + index, c);
     this._size = cSize;
     return true;
   };

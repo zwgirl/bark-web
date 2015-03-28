@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      Binding Demo
+    </title>
+    <style>
+      
+		        progress {  
+		            background-color: #f3f3f3;  
+		            border: 0;  
+		            height: 18px;  
+		            border-radius: 9px;  
+		        } 
+		        
+		        input[type="range"]::-ms-fill-lower {
+		            background-color: lime green;
+		        }
+		        
+		        .rect{
+		        	width:5px;
+		        	height:5px;
+		        	border:5px solid gray;
+		        	border-radius: 25px;
+		        }
+		        
+		        .color{
+		        	width:115px;
+		        	height:115px;
+		        	border:5px solid gray;
+		        	border-radius: 25px;
+		        }
+	        
+    </style><script type = 'text/javascript' src = '/js/stub.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/buildins.js'> </script>
+  <script type = 'text/javascript' src = '/org/w3c/dom/dom.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/beans.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/bindings.js'> </script>
+  <script type = 'text/javascript' >
+    var __this = new ((function(){ 
+      function BindingDemo() {        
+        this.font = null;
+        this.callback = (function(target, tagProperty1, tagProperty2, value){
+          console.log(value);
+          if(this.font != null)
+          {
+            target[tagProperty1][tagProperty2] = window.getComputedStyle(this.font, null).width;
+          }
+        }).bind(this);
+        this._count = 0;
+        this._length = null;
+        this._red = 0;
+        this._blue = 0;
+        this._green = 0;
+        this._color = null;
+        this._listeners = new Object();
+        this.addPropertyChangeListener("count", this.propertyChange.bind(this));
+        this.addPropertyChangeListener("red", this.propertyChange.bind(this));
+        this.addPropertyChangeListener("green", this.propertyChange.bind(this));
+        this.addPropertyChangeListener("blue", this.propertyChange.bind(this));
+      }
+      BindingDemo.prototype.__proto__ = Object.prototype;
+      __cache["demo.BindingDemo"] = BindingDemo;
+      Object.defineProperty(BindingDemo.prototype, "count", {
+        get : function() {
+          return this._count;
+        }, 
+        set : function(value) {
+          if(this._count === value)
+          {
+            return;
+          }
+          this._count = value;
+          this.propertyChanged("count");
+        }
+      });
+      Object.defineProperty(BindingDemo.prototype, "length", {
+        get : function() {
+          return this._length;
+        }, 
+        set : function(value) {
+          if(this._length === value)
+          {
+            return;
+          }
+          this._length = value;
+          this.propertyChanged("length");
+        }
+      });
+      Object.defineProperty(BindingDemo.prototype, "red", {
+        get : function() {
+          return this._red;
+        }, 
+        set : function(value) {
+          if(this._red === value)
+          {
+            return;
+          }
+          this._red = value;
+          this.propertyChanged("red");
+        }
+      });
+      Object.defineProperty(BindingDemo.prototype, "blue", {
+        get : function() {
+          return this._blue;
+        }, 
+        set : function(value) {
+          if(this._blue === value)
+          {
+            return;
+          }
+          this._blue = value;
+          this.propertyChanged("blue");
+        }
+      });
+      Object.defineProperty(BindingDemo.prototype, "green", {
+        get : function() {
+          return this._green;
+        }, 
+        set : function(value) {
+          if(this._green === value)
+          {
+            return;
+          }
+          this._green = value;
+          this.propertyChanged("green");
+        }
+      });
+      Object.defineProperty(BindingDemo.prototype, "color", {
+        get : function() {
+          return this._color;
+        }, 
+        set : function(value) {
+          if(this._color === value)
+          {
+            return;
+          }
+          this._color = value;
+          this.propertyChanged("color");
+        }
+      });
+      BindingDemo.prototype.propertyChanged = function(propName){
+        var event = new (__lc('java.lang.PropertyChangeEvent'))(propName);
+        var listeners = this._listeners[propName];
+        if(listeners == null)
+        {
+          return;
+        }
+        listeners.forEach((function(h, index, array){
+          h(this, event);
+        }).bind(this));
+      };
+      BindingDemo.prototype.addPropertyChangeListener = function(propName, handler){
+        var listeners = this._listeners[propName];
+        if(listeners == null)
+        {
+          listeners = new Array();
+          this._listeners[propName] = listeners;
+        }
+        listeners.push(handler);
+      };
+      BindingDemo.prototype.removePropertyChangeListener = function(propName, handler){
+        var listeners = this._listeners[propName];
+        if(listeners == null)
+        {
+          return;
+        }
+        listeners.forEach((function(h, index, array){
+          if(handler === h)
+          {
+            listeners.splice(index, 1);
+          }
+        }).bind(this));
+      };
+      BindingDemo.prototype.propertyChange = function(source, evt){
+        if(evt.propertyName == "count")
+        {
+          this.length = source[evt.propertyName] + "px";
+        }
+        else if(evt.propertyName == "red" || evt.propertyName == "green" || evt.propertyName == "blue")
+        {
+          this.color = "rgb(" + this._red + "," + this.green + "," + this._blue + ")";
+        }
+      };
+      BindingDemo.prototype.__class = new (__lc('java.lang.Class'))("demo.BindingDemo", BindingDemo, Object.prototype.__class, [__lc("java.lang.INotifyPropertyChanged").prototype.__class, __lc("java.lang.PropertyChangeListener").prototype.__class], 1);
+      return  BindingDemo;
+    })())();
+  </script>
+  </head>
+  <body>
+  <script type = 'text/javascript' >
+  var _c = document.createElement.bind(document);
+  var _a = Node.prototype.appendChild;
+    (function(_p){
+      var _n = _c("form");
+      _p.appendChild(_n);
+      (function(_p){
+        var _n = _c("fieldset");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("progress");
+          _p.appendChild(_n);
+          _n.id = "downloadProgress";
+          _n.labels = "datalist";
+          _n.max = 100;
+          _n.value = new (__lc("java.lang.Binding"))({property : "count", mode : __lc("java.lang.BindingMode").OneWay}).provideValue(_n, "value", null);
+          _p.appendChild(document.createTextNode("\r\n	    			输入textfield:"));
+          var _n = _c("input");
+          _p.appendChild(_n);
+          _n.type = "text";
+          _n.placeholder = "请输入内容到文本框";
+          var _n = _c("datalist");
+          _p.appendChild(_n);
+          _n.id = "charles info";
+          _n.style = "display:none;";
+          (function(_p){
+            var _n = _c("option");
+            _p.appendChild(_n);
+            _n.value = "charles wang";
+            (function(_p){
+              _p.appendChild(document.createTextNode("charles wang"));
+            }).call(__this, _n);
+            var _n = _c("option");
+            _p.appendChild(_n);
+            _n.value = "charles_wang888";
+            (function(_p){
+              _p.appendChild(document.createTextNode("charles_wang888"));
+            }).call(__this, _n);
+            var _n = _c("option");
+            _p.appendChild(_n);
+            _n.value = "charles王子";
+            (function(_p){
+              _p.appendChild(document.createTextNode("charles王子"));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          _p.appendChild(document.createTextNode("\r\n	    			\r\n	    			输入数字:"));
+          var _n = _c("input");
+          _p.appendChild(_n);
+          _n.name = "number1";
+          _n.type = "number";
+          _n.value = new (__lc("java.lang.Binding"))({property : "count", mode : __lc("java.lang.BindingMode").TwoWay, updateSourceTrigger : __lc("java.lang.UpdateSourceTrigger").PropertyChanged}).provideValue(_n, "value", null);
+          _n.min = "0";
+          _n.max = "100";
+          _n.step = "1";
+          _p.appendChild(document.createTextNode("\r\n	    			选择数值："));
+          var _n = _c("input");
+          _p.appendChild(_n);
+          _n.name = "range1";
+          _n.type = "range";
+          _n.value = new (__lc("java.lang.Binding"))({property : "count", mode : __lc("java.lang.BindingMode").TwoWay, updateSourceTrigger : __lc("java.lang.UpdateSourceTrigger").PropertyChanged}).provideValue(_n, "value", null);
+          _n.min = "0";
+          _n.max = "100";
+          _n.step = "1";
+          var _n = _c("progress");
+          _p.appendChild(_n);
+          _n.value = new (__lc("java.lang.Binding"))({property : "count", mode : __lc("java.lang.BindingMode").TwoWay, updateSourceTrigger : __lc("java.lang.UpdateSourceTrigger").PropertyChanged}).provideValue(_n, "value", null);
+          _n.max = "100";
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("div");
+      _p.appendChild(_n);
+      _n.className = "rect";
+      _n.style.width = new (__lc("java.lang.Binding"))({property : "length", mode : __lc("java.lang.BindingMode").OneWay, callback : this.callback}).provideValue(_n, "style", "width");
+      _n.style.height = new (__lc("java.lang.Binding"))({property : "length", mode : __lc("java.lang.BindingMode").OneWay}).provideValue(_n, "style", "height");
+      (function(_p){
+        var _n = _c("label");
+        _p.appendChild(_n);
+        _n["name"] = "font";
+        this.font = _n;
+        _n.style.fontSize = new (__lc("java.lang.Binding"))({property : "length", mode : __lc("java.lang.BindingMode").OneWay}).provideValue(_n, "style", "fontSize");
+        _n.textContent = "字体尺寸";
+      }).call(__this, _n);
+      var _n = _c("input");
+      _p.appendChild(_n);
+      _n.name = "red1";
+      _n.type = "range";
+      _n.value = new (__lc("java.lang.Binding"))({property : "red", mode : __lc("java.lang.BindingMode").TwoWay, updateSourceTrigger : __lc("java.lang.UpdateSourceTrigger").PropertyChanged}).provideValue(_n, "value", null);
+      _n.min = "0";
+      _n.max = "255";
+      _n.step = "1";
+      var _n = _c("br");
+      _p.appendChild(_n);
+      var _n = _c("input");
+      _p.appendChild(_n);
+      _n.name = "green1";
+      _n.type = "range";
+      _n.value = new (__lc("java.lang.Binding"))({property : "green", mode : __lc("java.lang.BindingMode").TwoWay, updateSourceTrigger : __lc("java.lang.UpdateSourceTrigger").PropertyChanged}).provideValue(_n, "value", null);
+      _n.min = "0";
+      _n.max = "255";
+      _n.step = "1";
+      var _n = _c("br");
+      _p.appendChild(_n);
+      var _n = _c("input");
+      _p.appendChild(_n);
+      _n.name = "blue1";
+      _n.type = "range";
+      _n.value = new (__lc("java.lang.Binding"))({property : "blue", mode : __lc("java.lang.BindingMode").TwoWay, updateSourceTrigger : __lc("java.lang.UpdateSourceTrigger").PropertyChanged}).provideValue(_n, "value", null);
+      _n.min = "0";
+      _n.max = "255";
+      _n.step = "1";
+      var _n = _c("br");
+      _p.appendChild(_n);
+      var _n = _c("div");
+      _p.appendChild(_n);
+      _n.className = "color";
+      _n.style.backgroundColor = new (__lc("java.lang.Binding"))({property : "color", mode : __lc("java.lang.BindingMode").OneWay}).provideValue(_n, "style", "backgroundColor");
+      (function(_p){
+        var _n = _c("span");
+        _p.appendChild(_n);
+        _n.textContent = new (__lc("java.lang.Binding"))({property : "color", mode : __lc("java.lang.BindingMode").OneWay}).provideValue(_n, "textContent", null);
+      }).call(__this, _n);
+    }).call(__this, document.body);</script>
+  </body>
+</html>

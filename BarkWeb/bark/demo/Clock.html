@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      CSS3/Lark Clock demo
+    </title>
+    <style type="text/css">
+      
+		        * {
+		        	margin: 0; 
+		        	padding: 0;
+		        }
+		        
+		        #clock {
+		        	position: relative;
+		        	width: 600px;
+		        	height: 600px;
+		        	margin: 20px auto 0 auto;
+		        	background: url(images/clockface.jpg);
+		        	list-style: none;
+	        	}
+		        
+		        #sec, #min, #hour {
+		        	position: absolute;
+		        	width: 30px;
+		        	height: 600px;
+		        	top: 0px;
+		        	left: 285px;
+	        	}
+		        
+		        #sec {
+		        	background: url(images/sechand.png);
+		        	z-index: 3;
+	           	}
+		           
+		        #min {
+		        	background: url(images/minhand.png);
+		        	z-index: 2;
+	           	}
+		           
+		        #hour {
+		        	background: url(images/hourhand.png);
+		        	z-index: 1;
+	           	}
+		           	
+		        p {
+		            text-align: center; 
+		            padding: 10px 0 0 0;
+	            }
+		    
+    </style><script type = 'text/javascript' src = '/js/stub.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/buildins.js'> </script>
+  <script type = 'text/javascript' src = '/org/w3c/dom/dom.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/beans.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/bindings.js'> </script>
+  <script type = 'text/javascript' >
+    var __this = new ((function(){ 
+      function Clock() {        
+        this.sec = null;
+        this.hour = null;
+        this.min = null;
+        var DOMContentLoaded = (function(event){
+          setInterval((function(){
+            this.sec.style.transform = "rotate(" + new Date().getSeconds() * 6 + "deg)";
+          }).bind(this), 1000);
+          setInterval((function(){
+            var hours = new Date().getHours();
+            var mins = new Date().getMinutes();
+            var hdegree = hours * 30 + (mins / 2);
+            var hrotate = "rotate(" + hdegree + "deg)";
+            this.hour.style.transform = hrotate;
+          }).bind(this), 1000);
+          setInterval((function(){
+            this.min.style.transform = "rotate(" + new Date().getMinutes() * 6 + "deg)";
+            ;
+          }).bind(this), 1000);
+        }).bind(this);
+        document.addEventListener("DOMContentLoaded", DOMContentLoaded, false);
+      }
+      Clock.prototype.__proto__ = Object.prototype;
+      __cache["demo.Clock"] = Clock;
+      Clock.prototype.__class = new (__lc('java.lang.Class'))("demo.Clock", Clock, Object.prototype.__class, [], 1);
+      return  Clock;
+    })())();
+  </script>
+  </head>
+  <body>
+  <script type = 'text/javascript' >
+  var _c = document.createElement.bind(document);
+  var _a = Node.prototype.appendChild;
+    (function(_p){
+      var _n = _c("div");
+      _p.appendChild(_n);
+      _n.id = "demo-top-bar";
+      (function(_p){
+        var _n = _c("div");
+        _p.appendChild(_n);
+        _n.id = "demo-bar-inside";
+        (function(_p){
+          var _n = _c("h2");
+          _p.appendChild(_n);
+          _n.id = "demo-bar-badge";
+          (function(_p){
+            var _n = _c("a");
+            _p.appendChild(_n);
+            _n.href = "/";
+            (function(_p){
+              _p.appendChild(document.createTextNode("Lark CSS-Tricks Example"));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("div");
+          _p.appendChild(_n);
+          _n.id = "demo-bar-buttons";
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("p");
+      _p.appendChild(_n);
+      (function(_p){
+        var _n = _c("a");
+        _p.appendChild(_n);
+        _n.href = "/css3-clock/";
+        (function(_p){
+          _p.appendChild(document.createTextNode("< 模拟钟表"));
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("ul");
+      _p.appendChild(_n);
+      _n.id = "clock";
+      (function(_p){
+        var _n = _c("li");
+        _p.appendChild(_n);
+        _n.id = "sec";
+        _n["name"] = "sec";
+        this.sec = _n;
+        var _n = _c("li");
+        _p.appendChild(_n);
+        _n.id = "hour";
+        _n["name"] = "hour";
+        this.hour = _n;
+        var _n = _c("li");
+        _p.appendChild(_n);
+        _n.id = "min";
+        _n["name"] = "min";
+        this.min = _n;
+      }).call(__this, _n);
+    }).call(__this, document.body);</script>
+  </body>
+</html>

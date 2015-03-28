@@ -2,7 +2,7 @@
   function AbstractList() {    
   __lc('java.util.AbstractCollection').call(this);
   }
-  AbstractList.prototype.__proto__ = __lc("java.util.AbstractCollection").prototype;
+  AbstractList.prototype.__proto__ = __lc("java.util.AbstractCollection", "java.util.AbstractCollection").prototype;
   __cache["java.util.AbstractList"] = AbstractList;
   AbstractList.prototype.add = function(e){
     this.addAt(this.size, e);
@@ -50,7 +50,7 @@
   AbstractList.prototype.clear = function(){
     this.removeRange(0, this.size);
   };
-  AbstractList.prototype.addAll = function(index, c){
+  AbstractList.prototype.addAllAt = function(index, c){
     rangeCheckForAdd.call(this, index);
     var modified = false;
     var __coll = c, __i = __coll.iterator();
@@ -192,6 +192,6 @@
     return  ListItr;
     return ListItr;
   })();
-  AbstractList.prototype.__class = new (__lc('java.lang.Class'))("java.util.AbstractList", AbstractList, __lc("java.util.AbstractCollection").prototype.__class, [__lc("java.util.List").prototype.__class], 1);
+  AbstractList.prototype.__class = new (__lc('java.lang.Class'))("java.util.AbstractList", AbstractList, __lc("java.util.AbstractCollection", "java.util.AbstractCollection").prototype.__class, [__lc("java.util.List").prototype.__class], 1);
   return  AbstractList;
 })();

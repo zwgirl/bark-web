@@ -51,6 +51,10 @@
     {
       this._updateSourceTrigger = options["updateSourceTrigger"];
     }
+    if(options["callback"] != undefined)
+    {
+      this._callback = options["callback"];
+    }
   }
   Binding.prototype.__proto__ = Object.prototype;
   __cache["java.lang.Binding"] = Binding;
@@ -167,7 +171,7 @@
     {
       if(this._binding.callback != null)
       {
-        this.callback(this._target, this._targetProperty, this._targetProperty1, this._target.dataContext.dataItem);
+        this._binding.callback(this._target, this._targetProperty, this._targetProperty1, this._target.dataContext.dataItem);
       }
       else
       {
@@ -201,7 +205,7 @@
       {
         if(this._binding.callback != null)
         {
-          this.callback(this._target, this._targetProperty, this._targetProperty1, this._target.dataContext.dataItem[this._binding.property]);
+          this._binding.callback(this._target, this._targetProperty, this._targetProperty1, this._target.dataContext.dataItem[this._binding.property]);
         }
         else
         {
@@ -219,7 +223,7 @@
       {
         if(this._binding.callback != null)
         {
-          this.callback(this._target, this._targetProperty, this._targetProperty1, null);
+          this._binding.callback(this._target, this._targetProperty, this._targetProperty1, null);
         }
         else
         {
@@ -242,6 +246,7 @@
         break;
     case __lc("java.lang.UpdateSourceTrigger").PropertyChanged :
         target.addEventListener("input", this.handle, false);
+        target.addEventListener("change", this.handle, false);
         break;
     default :
     }
@@ -383,7 +388,7 @@
       var oldPc = this._dataItem;
       for (var i = 0, length = this._dependents.length; i < length; i ++) 
       {
-        oldPc.removePropertyChangeListener(this._dependents[i].property, this._dependents[i].propertyChange);
+        oldPc.removePropertyChangeListener(this._dependents[i].property, this._dependents[i].propertyChange.bind(this));
       }
       for (var i = 0, length = this._bindings.length; i < length; i ++) 
       {
@@ -395,7 +400,7 @@
       var newPc = newDataItem;
       for (var i = 0, length = this._dependents.length; i < length; i ++) 
       {
-        newPc.addPropertyChangeListener(this._dependents[i].property, this._dependents[i].propertyChange);
+        newPc.addPropertyChangeListener(this._dependents[i].property, this._dependents[i].propertyChange.bind(this));
       }
       for (var i = 0, length = this._bindings.length; i < length; i ++) 
       {
@@ -531,7 +536,7 @@
     this._path = null;
     this._dataItem = null;
     this.nodesMap = new Map();
-    this.onCollectionChanged = (function(event){
+    this.onCollectionChanged = (function(sender, event){
       switch (event.Action) {
       case __lc("java.lang.CollectionChangedAction").Add :
           var items = event.NewItems;
@@ -542,6 +547,12 @@
             var root = template.create(this.container, item);
             this.nodesMap.set(item, root);
           }
+          break;
+      case __lc("java.lang.CollectionChangedAction").Reset :
+          this.nodesMap.forEach((function(node, key, mapObj){
+            this.container.removeChild(node);
+            this.nodesMap.delete(key);
+          }).bind(this));
           break;
       case __lc("java.lang.CollectionChangedAction").Remove :
           var __coll0 = event.OldItems
@@ -554,7 +565,6 @@
           break;
       case __lc("java.lang.CollectionChangedAction").Replace :
       case __lc("java.lang.CollectionChangedAction").Move :
-      case __lc("java.lang.CollectionChangedAction").Reset :
       }
     }).bind(this);
     this.propertyChange = (function(source, event){

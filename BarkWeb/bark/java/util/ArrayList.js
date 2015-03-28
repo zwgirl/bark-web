@@ -25,7 +25,7 @@
     this._size = this.elementData.length;
   }
   };
-  ArrayList.prototype.__proto__ = __lc("java.util.AbstractList").prototype;
+  ArrayList.prototype.__proto__ = __lc("java.util.AbstractList", "java.util.AbstractList").prototype;
   __cache["java.util.ArrayList"] = ArrayList;
   Object.defineProperty(ArrayList.prototype, "size", {
     get : function() {
@@ -370,7 +370,7 @@
       this.offset = offset + fromIndex;
       this._size = toIndex - fromIndex;
     }
-    SubList.prototype.__proto__ = __lc("java.util.AbstractList").prototype;
+    SubList.prototype.__proto__ = __lc("java.util.AbstractList", "java.util.AbstractList").prototype;
     __cache["java.util.ArrayList$SubList"] = SubList;
     Object.defineProperty(SubList.prototype, "size", {
       get : function() {
@@ -403,13 +403,13 @@
       this._size = toIndex - fromIndex;
     };
     SubList.prototype.addAll = function(c){
-      return this.addAll(this.size, c);
+      return this.addAllAt(this.size, c);
     };
     SubList.prototype.addAllAt = function(index, c){
       rangeCheckForAdd.call(this, index);
       var cSize = c.size;
       if(cSize == 0) return false;
-      this.parent.addAll(this.parentOffset + index, c);
+      this.parent.addAllAt(this.parentOffset + index, c);
       this._size = cSize;
       return true;
     };
@@ -506,10 +506,10 @@
     function outOfBoundsMsg(index){
       return "Index: " + index + ", Size: " + this._size;
     }
-    SubList.prototype.__class = new (__lc('java.lang.Class'))("java.util.ArrayList$SubList", SubList, __lc("java.util.AbstractList").prototype.__class, [], 1);
+    SubList.prototype.__class = new (__lc('java.lang.Class'))("java.util.ArrayList$SubList", SubList, __lc("java.util.AbstractList", "java.util.AbstractList").prototype.__class, [], 1);
     return  SubList;
     return SubList;
   })();
-  ArrayList.prototype.__class = new (__lc('java.lang.Class'))("java.util.ArrayList", ArrayList, __lc("java.util.AbstractList").prototype.__class, [__lc("java.util.List").prototype.__class, __lc("java.lang.Cloneable").prototype.__class, __lc("java.io.Serializable").prototype.__class], 1);
+  ArrayList.prototype.__class = new (__lc('java.lang.Class'))("java.util.ArrayList", ArrayList, __lc("java.util.AbstractList", "java.util.AbstractList").prototype.__class, [__lc("java.util.List").prototype.__class, __lc("java.lang.Cloneable").prototype.__class, __lc("java.io.Serializable").prototype.__class], 1);
   return  ArrayList;
 })();

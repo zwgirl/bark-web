@@ -503,15 +503,14 @@
   ItemTemplate.prototype.__proto__ = Object.prototype;
   __cache["java.lang.ItemTemplate"] = ItemTemplate;
   ItemTemplate.prototype.create = function(parent, item){
-    var root = this.createRoot(parent);
-    root.dataContext = new (__lc('java.lang.DataContext'))(item, "12");
+    var root = this.createRoot(parent, item);
     this.createChild(root);
     return root;
   };
   ItemTemplate.prototype.createChild = function(parent){
     throw new Error(0, "illegal call!");
   };
-  ItemTemplate.prototype.createRoot = function(parent){
+  ItemTemplate.prototype.createRoot = function(parent, item){
     throw new Error(0, "illegal call!");
   };
   ItemTemplate.prototype.__class = new (__lc('java.lang.Class'))("java.lang.ItemTemplate", ItemTemplate, Object.prototype.__class, [], 1);

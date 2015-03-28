@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<FCK:meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></FCK:meta> 
+<head> 
+<style> 
+body {background-color: #F0F0F0 ;  font: 11px "verdana","Arial"; margin-left:auto; margin-right:auto; } 
+.tScroll {border: 1px #7494BF solid; background-color: #ffffff; overflow:scroll;height:200px; width:600px;cursor: default; } 
+tr.tableHead { position:relative; background-color:#BFCEE7; height: 16px; text-align: center; } 
+th, td { font: 11px "Verdana", "Arial"; border: #7494BF solid; border-width: 0px 1px 1px 0px; } 
+table{width:900px; } 
+</style> 
+<script> 
+var   i=0; 
+var tes;
+function   aa(aa,ttd) 
+{ 
+if(i==0) 
+aa.innerHTML= " <select   onchange=bb(this.options[this.selectedIndex].value)><option   value= ''>   <option   value='*'>*</option> <option   value='#'>#</option> <select> " 
+tes=ttd;
+i=1;
+
+} 
+function   bb(s) 
+{ 
+document.getElementById(tes).innerHTML=s; 
+i=0;
+
+}
+
+</script> 
+</head> 
+<body>
+<div class="tScroll">
+  <table border="1" cellpadding="0" cellspacing="0" bordercolor="#CCCCCC">
+    <col width="111" />
+    <col width="36" />
+    <col width="52" span="4" />
+    <col width="36" span="3" />
+    <col width="52" span="8" />
+    <col width="36" />
+    <col width="52" span="2" />
+    <tr height="19" style="width:50px">
+      <td height="19" width="101"><div align="center">体系文件</div></td>
+      <td align="right" width="21"><div align="center">4.1</div></td>
+      <td width="48"><div align="center">4.2.1</div></td>
+      <td width="48"><div align="center">4.2.2</div></td>
+      <td width="48"><div align="center">4.2.3</div></td>
+      <td width="48"><div align="center">4.2.4</div></td>
+      <td align="right" width="32"><div align="center">5.1</div></td>
+      <td align="right" width="32"><div align="center">5.2</div></td>
+      <td align="right" width="32"><div align="center">5.3</div></td>
+      <td width="48"><div align="center">5.4.1</div></td>
+      <td width="48"><div align="center">5.4.2</div></td>
+      <td width="48"><div align="center">5.5.1</div></td>
+      <td width="48"><div align="center">5.5.2</div></td>
+      <td width="48"><div align="center">5.5.3</div></td>
+      <td width="48"><div align="center">5.6.1</div></td>
+      <td width="48"><div align="center">5.6.2</div></td>
+      <td width="48"><div align="center">5.6.3</div></td>
+      <td align="right" width="32"><div align="center">6.1</div></td>
+      <td width="48"><div align="center">6.2.1</div></td>
+      <td width="59"><div align="center">6.2.2</div></td>
+    </tr>
+    <tr height="19">
+      <td height="19"><div align="center">记录控制系统</div></td>
+      <td id=td1   onclick= "aa(this,'td1'); ">　</td>
+      <td id=td2   onclick= "aa(this,'td2'); ">　</td>
+      <td id=td3   onclick= "aa(this,'td3'); ">　</td>
+      <td id=td4   onclick= "aa(this,'td4'); ">　</td>
+      <td id=td5   onclick= "aa(this,'td5'); ">　</td>
+      <td id=td6   onclick= "aa(this,'td6'); ">　</td>
+      <td id=td7   onclick= "aa(this,'td7'); ">　</td>
+      <td id=td8   onclick= "aa(this,'td8'); ">　</td>
+      <td id=td9   onclick= "aa(this,'td9'); ">　</td>
+      <td id=td10   onclick= "aa(this,'td10'); ">　</td>
+      <td id=td11  onclick= "aa(this,'td11'); ">　</td>
+      <td id=td12   onclick= "aa(this,'td12'); ">　</td>
+      <td id=td13   onclick= "aa(this,'td13'); ">　</td>
+      <td id=td14   onclick= "aa(this,'td14'); ">　</td>
+      <td id=td15   onclick= "aa(this,'td15'); ">　</td>
+      <td id=td16   onclick= "aa(this,'td16'); ">　</td>
+      <td id=td17   onclick= "aa(this,'td17'); ">　</td>
+      <td id=td18   onclick= "aa(this,'td18'); ">　</td>
+      <td id=td19   onclick= "aa(this,'td19'); ">　</td>
+    </tr>
+    <tr height="19">
+      <td height="19"><div align="center">管理评审系统</div></td>
+      <td id=td21   onclick= "aa(this,'td21'); ">　</td>
+      <td id=td22   onclick= "aa(this,'td22'); ">　</td>
+      <td id=td23   onclick= "aa(this,'td23'); ">　</td>
+      <td id=td24   onclick= "aa(this,'td24'); ">　</td>
+      <td id=td25   onclick= "aa(this,'td25'); ">　</td>
+      <td id=td26   onclick= "aa(this,'td26'); ">　</td>
+      <td id=td27   onclick= "aa(this,'td27'); ">　</td>
+      <td id=td28   onclick= "aa(this,'td28'); ">　</td>
+      <td id=td29   onclick= "aa(this,'td29'); ">　</td>
+      <td id=td30   onclick= "aa(this,'td30'); ">　</td>
+      <td id=td31   onclick= "aa(this,'td31'); ">　</td>
+      <td id=td32   onclick= "aa(this,'td32'); ">　</td>
+      <td id=td33   onclick= "aa(this,'td33'); ">　</td>
+      <td id=td34   onclick= "aa(this,'td34'); ">　</td>
+      <td id=td35   onclick= "aa(this,'td35'); ">　</td>
+      <td id=td36   onclick= "aa(this,'td36'); ">　</td>
+      <td id=td37   onclick= "aa(this,'td37'); ">　</td>
+      <td id=td38   onclick= "aa(this,'td38'); ">　</td>
+      <td id=td39   onclick= "aa(this,'td39'); ">　</td>
+    </tr>
+    <tr height="19">
+      <td height="19"><div align="center">培训管理系统</div></td>
+      <td id=td41   onclick= "aa(this,'td41'); ">　</td>
+      <td id=td42   onclick= "aa(this,'td42'); ">　</td>
+      <td id=td43   onclick= "aa(this,'td43'); ">　</td>
+      <td id=td44   onclick= "aa(this,'td44'); ">　</td>
+      <td id=td45   onclick= "aa(this,'td45'); ">　</td>
+      <td id=td46   onclick= "aa(this,'td46'); ">　</td>
+      <td id=td47   onclick= "aa(this,'td47'); ">　</td>
+      <td id=td48   onclick= "aa(this,'td48'); ">　</td>
+      <td id=td49   onclick= "aa(this,'td49'); ">　</td>
+      <td id=td50   onclick= "aa(this,'td50'); ">　</td>
+      <td id=td51   onclick= "aa(this,'td51'); ">　</td>
+      <td id=td52   onclick= "aa(this,'td52'); ">　</td>
+      <td id=td53   onclick= "aa(this,'td53'); ">　</td>
+      <td id=td54   onclick= "aa(this,'td54'); ">　</td>
+      <td id=td55   onclick= "aa(this,'td55'); ">　</td>
+      <td id=td56   onclick= "aa(this,'td56'); ">　</td>
+      <td id=td57   onclick= "aa(this,'td57'); ">　</td>
+      <td id=td58   onclick= "aa(this,'td58'); ">　</td>
+      <td id=td59   onclick= "aa(this,'td59'); ">　</td>
+    </tr>
+    <tr height="19">
+      <td height="19"><div align="center">内部审核系统</div></td>
+      <td id=td61   onclick= "aa(this,'td61'); ">　</td>
+      <td id=td62   onclick= "aa(this,'td62'); ">　</td>
+      <td id=td63   onclick= "aa(this,'td63'); ">　</td>
+      <td id=td64   onclick= "aa(this,'td64'); ">　</td>
+      <td id=td65   onclick= "aa(this,'td65'); ">　</td>
+      <td id=td66   onclick= "aa(this,'td66'); ">　</td>
+      <td id=td67   onclick= "aa(this,'td67'); ">　</td>
+      <td id=td68   onclick= "aa(this,'td68'); ">　</td>
+      <td id=td69   onclick= "aa(this,'td69'); ">　</td>
+      <td id=td70   onclick= "aa(this,'td70'); ">　</td>
+      <td id=td71   onclick= "aa(this,'td71'); ">　</td>
+      <td id=td72   onclick= "aa(this,'td72'); ">　</td>
+      <td id=td73   onclick= "aa(this,'td73'); ">　</td>
+      <td id=td74   onclick= "aa(this,'td74'); ">　</td>
+      <td id=td75   onclick= "aa(this,'td75'); ">　</td>
+      <td id=td76   onclick= "aa(this,'td76'); ">　</td>
+      <td id=td77   onclick= "aa(this,'td77'); ">　</td>
+      <td id=td78   onclick= "aa(this,'td78'); ">　</td>
+      <td id=td79   onclick= "aa(this,'td79'); ">　</td>
+    </tr>
+    <tr height="19">
+      <td height="19"><div align="center">采购控制系统</div></td>
+      <td id=td81   onclick= "aa(this,'td81'); ">　</td>
+      <td id=td82   onclick= "aa(this,'td82'); ">　</td>
+      <td id=td83   onclick= "aa(this,'td83'); ">　</td>
+      <td id=td84   onclick= "aa(this,'td84'); ">　</td>
+      <td id=td85   onclick= "aa(this,'td85'); ">　</td>
+      <td id=td86   onclick= "aa(this,'td86'); ">　</td>
+      <td id=td87   onclick= "aa(this,'td87'); ">　</td>
+      <td id=td88   onclick= "aa(this,'td88'); ">　</td>
+      <td id=td89   onclick= "aa(this,'td89'); ">　</td>
+      <td id=td90   onclick= "aa(this,'td90'); ">　</td>
+      <td id=td91   onclick= "aa(this,'td91'); ">　</td>
+      <td id=td92   onclick= "aa(this,'td92'); ">　</td>
+      <td id=td93   onclick= "aa(this,'td93'); ">　</td>
+      <td id=td94   onclick= "aa(this,'td94'); ">　</td>
+      <td id=td95   onclick= "aa(this,'td95'); ">　</td>
+      <td id=td96   onclick= "aa(this,'td96'); ">　</td>
+      <td id=td97   onclick= "aa(this,'td97'); ">　</td>
+      <td id=td98   onclick= "aa(this,'td98'); ">　</td>
+      <td id=td99   onclick= "aa(this,'td99'); ">　</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

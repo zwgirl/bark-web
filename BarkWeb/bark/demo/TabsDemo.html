@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Lark Tabs Demo
+    </title>
+    <style type="text/css">
+			tabBox .tabs {
+			    margin: 0;
+			    padding: 0 10px;
+			    overflow: hidden;
+			    margin-bottom: -1px;
+			    height: 2.25em;
+			}
+		
+			.tabBox .tabs li {
+			    float: left;
+			    list-style: none;
+			    margin: 0;
+			    padding: .25em .25em 0;
+			    height: 2em;
+			    overflow: hidden;
+			    position: relative;
+			    z-index: 1;
+			    border-bottom: 1px solid #FFF;
+			}
+		
+			.tabBox .tabs li.selected {
+			    z-index: 3;
+			}
+		
+			.tabBox .tabs a {
+			    float: left;
+			    height: 2em;
+			    line-height: 2em;
+			    border-radius: 8px 8px 0 0;
+			    background: #EEE;
+			    border: 1px solid #CCC;
+			    border-bottom: 0;
+			    padding: 0 10px;
+			    color: #000;
+			    text-decoration: none;
+			}
+		
+			.tabBox .tabs .selected a {
+			    background: #FFF;
+			    box-shadow: #CCC 0 0 .25em;
+			}
+		
+			.tabBox .tabs a:hover {
+			    background: linear-gradient(#EEF, #FFF 70%);
+			}
+		
+			.tabBox .content {
+			    clear: left;
+			    position: relative;
+			    z-index: 2;
+			    padding: 2em 1em;
+			    border: 1px solid #CCC;
+			    background: #FFF;
+			    border-radius: 3px;
+			    box-shadow: #CCC 0 0 .25em;
+			}
+		
+    </style><script type = 'text/javascript' src = '/js/stub.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/buildins.js'> </script>
+  <script type = 'text/javascript' >
+    var __this = new ((function(){ 
+      function TabsDemo() {        
+      }
+      TabsDemo.prototype.__proto__ = Object.prototype;
+      __cache["demo.TabsDemo"] = TabsDemo;
+      TabsDemo.prototype.__class = new (__lc('java.lang.Class'))("demo.TabsDemo", TabsDemo, Object.prototype.__class, [], 1);
+      return  TabsDemo;
+    })())();
+  </script>
+  </head>
+  <body>
+    <div class="tabBox">
+      <ul class="tabs">
+        <li class="selected">
+          <a href="#">Tab One
+          </a>
+        </li>
+        <li class="selected">
+          <a href="#">Tab Two
+          </a>
+        </li>
+        <li>
+          <a href="#">Tab Three
+          </a>
+        </li>
+      </ul>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet1
+        </p>
+      </div>
+      <div class="content" style="display: none;">
+        <p>Lorem ipsum dolor sit amet2
+        </p>
+      </div>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet3
+        </p>
+      </div>
+    </div>
+    <p>
+			akhskashjakhsakshakjsha
+			
+    </p>
+  </body>
+</html>

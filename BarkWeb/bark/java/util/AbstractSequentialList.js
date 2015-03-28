@@ -2,7 +2,7 @@
   function AbstractSequentialList() {    
   __lc('java.util.AbstractList').call(this);
   }
-  AbstractSequentialList.prototype.__proto__ = __lc("java.util.AbstractList").prototype;
+  AbstractSequentialList.prototype.__proto__ = __lc("java.util.AbstractList", "java.util.AbstractList").prototype;
   __cache["java.util.AbstractSequentialList"] = AbstractSequentialList;
   AbstractSequentialList.prototype.get = function(index){
     try
@@ -69,6 +69,6 @@
   };
   AbstractSequentialList.prototype.listIteratorAt = function(index){
   };
-  AbstractSequentialList.prototype.__class = new (__lc('java.lang.Class'))("java.util.AbstractSequentialList", AbstractSequentialList, __lc("java.util.AbstractList").prototype.__class, [], 1);
+  AbstractSequentialList.prototype.__class = new (__lc('java.lang.Class'))("java.util.AbstractSequentialList", AbstractSequentialList, __lc("java.util.AbstractList", "java.util.AbstractList").prototype.__class, [], 1);
   return  AbstractSequentialList;
 })();

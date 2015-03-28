@@ -1,0 +1,578 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/screen.css" media="screen, projection">
+    </link>
+    <meta http-equiv="charset" content="UTF-8"><script type = 'text/javascript' src = '/js/stub.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/buildins.js'> </script>
+  <script type = 'text/javascript' src = '/org/w3c/dom/dom.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/beans.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/bindings.js'> </script>
+  <script type = 'text/javascript' >
+    var __this = new ((function(){ 
+      function CardList() {        
+        this._items = null;
+        this._items = new (__lc('java.util.ArrayList'))("2");
+        for (var i = 0; i < 2; i ++) 
+        {
+          this._items.add(new (__lc('demo.Choice'))("item basic", "Basic", "£3.99 ($6 US)", "15", "Unlimited invoices per month", "Unlimited staff logins", "Free upgrades", "RapidSSL Certificate", "Unlimited telephone & email support", ""));
+          this._items.add(new (__lc('demo.Choice'))("item basic", "Small business", "£16.99 ($7 US)", "25", "Unlimited invoices per month", "Unlimited staff logins", "Free upgrades", "RapidSSL Certificate", "Unlimited telephone & email support", ""));
+          this._items.add(new (__lc('demo.Choice'))("item basic", "Professional", "£20.99 ($8 US)", "50", "Unlimited invoices per month", "Unlimited staff logins", "Free upgrades", "RapidSSL Certificate", "Unlimited telephone & email support", ""));
+          this._items.add(new (__lc('demo.Choice'))("item basic", "Enterprise", "£25.99 ($9 US)", "150", "Unlimited invoices per month", "Unlimited staff logins", "Free upgrades", "RapidSSL Certificate", "Unlimited telephone & email support", ""));
+        }
+      }
+      CardList.prototype.__proto__ = Object.prototype;
+      __cache["demo.CardList"] = CardList;
+      Object.defineProperty(CardList.prototype, "items", {
+        get : function() {
+          return this._items;
+        }, 
+        set : function(value) {
+          this._items = value;
+        }
+      });
+      CardList.prototype.__class = new (__lc('java.lang.Class'))("demo.CardList", CardList, Object.prototype.__class, [], 1);
+      return  CardList;
+    })())();
+  </script>
+  </head>
+  <body>
+  <script type = 'text/javascript' >
+  var _c = document.createElement.bind(document);
+  var _a = Node.prototype.appendChild;
+    (function(_p){
+      var _n = _c("div");
+      _p.appendChild(_n);
+      _n.className = "tools";
+      (function(_p){
+        var _n = _c("form");
+        _p.appendChild(_n);
+        _n.action = "#";
+        _n.method = "post";
+        (function(_p){
+          var _n = _c("fieldset");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("label");
+            _p.appendChild(_n);
+            _n.htmlFor = "lang";
+            (function(_p){
+              var _n = _c("span");
+              _p.appendChild(_n);
+              (function(_p){
+                _p.appendChild(document.createTextNode("Language"));
+              }).call(__this, _n);
+              var _n = _c("select");
+              _p.appendChild(_n);
+              _n.id = "lang";
+              (function(_p){
+                var _n = _c("option");
+                _p.appendChild(_n);
+                _n.value = "";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("Choose"));
+                }).call(__this, _n);
+                var _n = _c("option");
+                _p.appendChild(_n);
+                _n.value = "#";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("English (UK)"));
+                }).call(__this, _n);
+                var _n = _c("option");
+                _p.appendChild(_n);
+                _n.value = "#";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("English (US)"));
+                }).call(__this, _n);
+                var _n = _c("option");
+                _p.appendChild(_n);
+                _n.value = "#";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("French"));
+                }).call(__this, _n);
+                var _n = _c("option");
+                _p.appendChild(_n);
+                _n.value = "#";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("German"));
+                }).call(__this, _n);
+                var _n = _c("option");
+                _p.appendChild(_n);
+                _n.value = "#";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("Italian"));
+                }).call(__this, _n);
+                var _n = _c("option");
+                _p.appendChild(_n);
+                _n.value = "#";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("Spanish"));
+                }).call(__this, _n);
+              }).call(__this, _n);
+            }).call(__this, _n);
+          }).call(__this, _n);
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("header");
+      _p.appendChild(_n);
+      _n.className = "branding";
+      (function(_p){
+        var _n = _c("h2");
+        _p.appendChild(_n);
+        _n.className = "logo";
+        (function(_p){
+          var _n = _c("a");
+          _p.appendChild(_n);
+          _n.href = "#";
+          (function(_p){
+            _p.appendChild(document.createTextNode("CannyBill"));
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("nav");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("ul");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("li");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("a");
+              _p.appendChild(_n);
+              _n.href = "#";
+              (function(_p){
+                _p.appendChild(document.createTextNode("Tour"));
+              }).call(__this, _n);
+            }).call(__this, _n);
+            var _n = _c("li");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("a");
+              _p.appendChild(_n);
+              _n.href = "#";
+              (function(_p){
+                _p.appendChild(document.createTextNode("Discussions"));
+              }).call(__this, _n);
+            }).call(__this, _n);
+            var _n = _c("li");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("a");
+              _p.appendChild(_n);
+              _n.href = "#";
+              (function(_p){
+                _p.appendChild(document.createTextNode("Pricing"));
+              }).call(__this, _n);
+            }).call(__this, _n);
+            var _n = _c("li");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("a");
+              _p.appendChild(_n);
+              _n.href = "#";
+              (function(_p){
+                _p.appendChild(document.createTextNode("Support"));
+              }).call(__this, _n);
+            }).call(__this, _n);
+            var _n = _c("li");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("a");
+              _p.appendChild(_n);
+              _n.href = "#";
+              (function(_p){
+                _p.appendChild(document.createTextNode("Contact"));
+              }).call(__this, _n);
+            }).call(__this, _n);
+          }).call(__this, _n);
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("div");
+      _p.appendChild(_n);
+      _n.id = "flexContainer";
+      _n.className = "content";
+      (function(_p){
+        var _n = _c("h1");
+        _p.appendChild(_n);
+        (function(_p){
+          _p.appendChild(document.createTextNode("Affordable plans make using CannyBill a simple choice"));
+        }).call(__this, _n);
+        var _n = _c("p");
+        _p.appendChild(_n);
+        _n.className = "strapline";
+        (function(_p){
+          _p.appendChild(document.createTextNode("Start using CannyBill today. A minute is all it takes to sign up."));
+        }).call(__this, _n);
+        var _n = _c("ol");
+        _p.appendChild(_n);
+        _n.className = "hlisting offer-sale plans";
+        _n.itemsConfig = new (__lc("java.lang.ItemsConfig"))({path : "items", itemTemplate : __lc("demo.MyTemplate").prototype.__class}).provideValue(_n, "itemsConfig", null);
+        var _n = _c("p");
+        _p.appendChild(_n);
+        (function(_p){
+          _p.appendChild(document.createTextNode("Manage up to five active clients with our "));
+          var _n = _c("a");
+          _p.appendChild(_n);
+          _n.href = "#";
+          (function(_p){
+            _p.appendChild(document.createTextNode("free plan"));
+          }).call(__this, _n);
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("section");
+      _p.appendChild(_n);
+      _n.className = "testimonial";
+      (function(_p){
+        var _n = _c("blockquote");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("p");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("In 2010 CannyBill will provide the backbone of our content delivery services, helping us to sell our range of For A Beautiful Web video tutorials to web designers world-wide."));
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("p");
+        _p.appendChild(_n);
+        _n.className = "vcard";
+        (function(_p){
+          var _n = _c("a");
+          _p.appendChild(_n);
+          _n.href = "http://stuffandnonsense.co.uk";
+          (function(_p){
+            _p.appendChild(document.createTextNode("Andy Clarke"));
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("p");
+        _p.appendChild(_n);
+        _n.className = "more";
+        (function(_p){
+          var _n = _c("a");
+          _p.appendChild(_n);
+          _n.href = "#";
+          (function(_p){
+            _p.appendChild(document.createTextNode("What people say about CannyBill"));
+          }).call(__this, _n);
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("div");
+      _p.appendChild(_n);
+      _n.className = "content";
+      (function(_p){
+        
+        _p.appendChild(document.createTextNode(">\r\n				"));
+        var _n = _c("div");
+        _p.appendChild(_n);
+        _n.className = "colgroup";
+        (function(_p){
+          var _n = _c("div");
+          _p.appendChild(_n);
+          _n.className = "col";
+          (function(_p){
+            var _n = _c("a");
+            _p.appendChild(_n);
+            _n.href = "#";
+            (function(_p){
+              var _n = _c("h3");
+              _p.appendChild(_n);
+              (function(_p){
+                _p.appendChild(document.createTextNode("Why use hosted software?"));
+              }).call(__this, _n);
+              var _n = _c("p");
+              _p.appendChild(_n);
+              (function(_p){
+                _p.appendChild(document.createTextNode("The price of the software is included in the monthly fee. Setup is included and automated. PCI compliance affects all on site gateways and for all auto-bill transactions."));
+              }).call(__this, _n);
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("div");
+          _p.appendChild(_n);
+          _n.className = "col";
+          (function(_p){
+            var _n = _c("a");
+            _p.appendChild(_n);
+            _n.href = "#";
+            (function(_p){
+              var _n = _c("h3");
+              _p.appendChild(_n);
+              (function(_p){
+                _p.appendChild(document.createTextNode("CannyBill order forms"));
+              }).call(__this, _n);
+              var _n = _c("p");
+              _p.appendChild(_n);
+              (function(_p){
+                _p.appendChild(document.createTextNode("CannyBill enables you send automated renewal invoices with automated payment reminder notifications and optional late fees. You can set when an invoice should be due and how many and often reminders should be sent out."));
+              }).call(__this, _n);
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("div");
+          _p.appendChild(_n);
+          _n.className = "col";
+          (function(_p){
+            var _n = _c("a");
+            _p.appendChild(_n);
+            _n.href = "#";
+            (function(_p){
+              var _n = _c("h3");
+              _p.appendChild(_n);
+              (function(_p){
+                _p.appendChild(document.createTextNode("Security"));
+              }).call(__this, _n);
+              var _n = _c("p");
+              _p.appendChild(_n);
+              (function(_p){
+                _p.appendChild(document.createTextNode("We are dedicated to ensuring that you data is stored safely, securely and reliably. Our security safeguards give you peace of mind that your information is treated with the care and responsibility it requires."));
+              }).call(__this, _n);
+            }).call(__this, _n);
+          }).call(__this, _n);
+        }).call(__this, _n);
+        
+        _p.appendChild(document.createTextNode(">\r\n				"));
+        var _n = _c("div");
+        _p.appendChild(_n);
+        _n.className = "colgroup";
+        (function(_p){
+          var _n = _c("div");
+          _p.appendChild(_n);
+          _n.className = "col";
+          (function(_p){
+            var _n = _c("h3");
+            _p.appendChild(_n);
+            (function(_p){
+              _p.appendChild(document.createTextNode("Manage customers"));
+            }).call(__this, _n);
+            var _n = _c("p");
+            _p.appendChild(_n);
+            (function(_p){
+              _p.appendChild(document.createTextNode("Manage every aspect of your customers account. Generate new invoices or see how many are overdue or which ones have been partially paid. You can also re-send login details, credit accounts, upgrade or downgrade a package and update contact details."));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("div");
+          _p.appendChild(_n);
+          _n.className = "col";
+          (function(_p){
+            var _n = _c("h3");
+            _p.appendChild(_n);
+            (function(_p){
+              _p.appendChild(document.createTextNode("Access for you and staff"));
+            }).call(__this, _n);
+            var _n = _c("p");
+            _p.appendChild(_n);
+            (function(_p){
+              _p.appendChild(document.createTextNode("CannyBill enables you to setup accounts for your staff members so they too can access CannyBill and provide support. You can also setup permissions for each login account."));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("div");
+          _p.appendChild(_n);
+          _n.className = "col";
+          (function(_p){
+            var _n = _c("h3");
+            _p.appendChild(_n);
+            (function(_p){
+              _p.appendChild(document.createTextNode("Send powerful email campaigns"));
+            }).call(__this, _n);
+            var _n = _c("p");
+            _p.appendChild(_n);
+            (function(_p){
+              _p.appendChild(document.createTextNode("Signing up customers is one thing but keeping them is another. CannyBill enables to you to either post Latest News items in your customers account which they would see when they logged in and also send powerful email campaigns."));
+            }).call(__this, _n);
+          }).call(__this, _n);
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("section");
+      _p.appendChild(_n);
+      _n.className = "highlight";
+      (function(_p){
+        var _n = _c("h3");
+        _p.appendChild(_n);
+        (function(_p){
+          _p.appendChild(document.createTextNode("Still got a question?"));
+        }).call(__this, _n);
+        var _n = _c("p");
+        _p.appendChild(_n);
+        (function(_p){
+          var _n = _c("a");
+          _p.appendChild(_n);
+          _n.href = "contact.html";
+          (function(_p){
+            _p.appendChild(document.createTextNode("Get in touch"));
+          }).call(__this, _n);
+          _p.appendChild(document.createTextNode(" and we’ll be happy to help you out."));
+        }).call(__this, _n);
+      }).call(__this, _n);
+      var _n = _c("div");
+      _p.appendChild(_n);
+      _n.className = "info";
+      (function(_p){
+        var _n = _c("div");
+        _p.appendChild(_n);
+        _n.className = "inner";
+        (function(_p){
+          var _n = _c("nav");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("ul");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("li");
+              _p.appendChild(_n);
+              (function(_p){
+                var _n = _c("a");
+                _p.appendChild(_n);
+                _n.href = "#";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("About us"));
+                }).call(__this, _n);
+              }).call(__this, _n);
+              var _n = _c("li");
+              _p.appendChild(_n);
+              (function(_p){
+                var _n = _c("a");
+                _p.appendChild(_n);
+                _n.href = "#";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("Privacy"));
+                }).call(__this, _n);
+              }).call(__this, _n);
+              var _n = _c("li");
+              _p.appendChild(_n);
+              (function(_p){
+                var _n = _c("a");
+                _p.appendChild(_n);
+                _n.href = "#";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("Terms of service"));
+                }).call(__this, _n);
+              }).call(__this, _n);
+              var _n = _c("li");
+              _p.appendChild(_n);
+              (function(_p){
+                var _n = _c("a");
+                _p.appendChild(_n);
+                _n.href = "#";
+                (function(_p){
+                  _p.appendChild(document.createTextNode("Contact us"));
+                }).call(__this, _n);
+              }).call(__this, _n);
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("div");
+          _p.appendChild(_n);
+          _n.className = "openingtimes";
+          (function(_p){
+            var _n = _c("h4");
+            _p.appendChild(_n);
+            (function(_p){
+              _p.appendChild(document.createTextNode("Sales and support hours"));
+            }).call(__this, _n);
+            var _n = _c("p");
+            _p.appendChild(_n);
+            (function(_p){
+              _p.appendChild(document.createTextNode("9am – 5pm "));
+              var _n = _c("abbr");
+              _p.appendChild(_n);
+              (function(_p){
+                _p.appendChild(document.createTextNode("Mon"));
+              }).call(__this, _n);
+              _p.appendChild(document.createTextNode(" – "));
+              var _n = _c("abbr");
+              _p.appendChild(_n);
+              (function(_p){
+                _p.appendChild(document.createTextNode("Fri"));
+              }).call(__this, _n);
+              var _n = _c("br");
+              _p.appendChild(_n);
+              _p.appendChild(document.createTextNode("\r\n						It is 1:05pm in Newcastle, UK."));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("div");
+          _p.appendChild(_n);
+          _n.className = "vcard";
+          (function(_p){
+            var _n = _c("div");
+            _p.appendChild(_n);
+            (function(_p){
+              var _n = _c("a");
+              _p.appendChild(_n);
+              _n.className = "fn org url";
+              _n.rel = "me";
+              _n.href = "#";
+              (function(_p){
+                _p.appendChild(document.createTextNode("CannyBill"));
+              }).call(__this, _n);
+            }).call(__this, _n);
+            var _n = _c("div");
+            _p.appendChild(_n);
+            _n.className = "adr";
+            (function(_p){
+              var _n = _c("div");
+              _p.appendChild(_n);
+              _n.className = "street-address";
+              (function(_p){
+                _p.appendChild(document.createTextNode("Silicon Alley, 1 Pink Lane"));
+              }).call(__this, _n);
+              var _n = _c("div");
+              _p.appendChild(_n);
+              _n.className = "region";
+              (function(_p){
+                _p.appendChild(document.createTextNode("Newcastle Upon Tyne"));
+              }).call(__this, _n);
+              var _n = _c("div");
+              _p.appendChild(_n);
+              _n.className = "locality";
+              (function(_p){
+                _p.appendChild(document.createTextNode("Tyne and Wear"));
+              }).call(__this, _n);
+              var _n = _c("div");
+              _p.appendChild(_n);
+              _n.className = "postal-code";
+              (function(_p){
+                _p.appendChild(document.createTextNode("NE1 5DW"));
+              }).call(__this, _n);
+              var _n = _c("div");
+              _p.appendChild(_n);
+              _n.className = "country-name";
+              (function(_p){
+                _p.appendChild(document.createTextNode("United Kingdom"));
+              }).call(__this, _n);
+            }).call(__this, _n);
+            var _n = _c("div");
+            _p.appendChild(_n);
+            _n.className = "tel";
+            (function(_p){
+              _p.appendChild(document.createTextNode("0845 812 5262"));
+            }).call(__this, _n);
+          }).call(__this, _n);
+          var _n = _c("p");
+          _p.appendChild(_n);
+          _n.id = "copyright";
+          (function(_p){
+            _p.appendChild(document.createTextNode("The names and logos for Basecamp, Highrise, Backpack, and 37signals are registered trademarks of "));
+            var _n = _c("a");
+            _p.appendChild(_n);
+            _n.href = "#";
+            (function(_p){
+              _p.appendChild(document.createTextNode("37signals LLC"));
+            }).call(__this, _n);
+            _p.appendChild(document.createTextNode(".\r\n					The names and logos for CampaignMonitor are registered trademarks of "));
+            var _n = _c("a");
+            _p.appendChild(_n);
+            _n.href = "#";
+            (function(_p){
+              _p.appendChild(document.createTextNode("Freshview"));
+            }).call(__this, _n);
+            _p.appendChild(document.createTextNode(".\r\n					All text and design is © copyright. All rights reserved. "));
+            var _n = _c("a");
+            _p.appendChild(_n);
+            _n.href = "#page";
+            _n.className = "self";
+            (function(_p){
+              _p.appendChild(document.createTextNode("Top"));
+            }).call(__this, _n);
+          }).call(__this, _n);
+        }).call(__this, _n);
+      }).call(__this, _n);
+    }).call(__this, document.body);</script>
+  </body>
+</html>

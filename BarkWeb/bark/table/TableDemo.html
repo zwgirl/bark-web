@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>
+      CSS3/Lark Clock demo
+    </title>
+    <style>
+      
+		    	tr:hover{
+				    color:yellow;
+					background:blue;
+		    	}
+		    
+    </style><script type = 'text/javascript' src = '/js/stub.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/buildins.js'> </script>
+  <script type = 'text/javascript' src = '/org/w3c/dom/dom.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/beans.js'> </script>
+  <script type = 'text/javascript' src = '/java/lang/bindings.js'> </script>
+  <script type = 'text/javascript' >
+    var __this = new ((function(){ 
+      function TableDemo() {        
+        this.select = null;
+        this._persons = new (__lc('java.util.ObservableCollection'))("1");
+        this.addChild = (function(event){
+          this.persons.add(new (__lc('table.Person'))("child1", "新增张三", "山东高密新增", 35));
+        }).bind(this);
+        this.deleteChild = (function(event){
+          if(this.persons.size > 0)
+          {
+            this.persons.removeAt(0);
+          }
+        }).bind(this);
+        this.nextPage = (function(event){
+          var nextPage = new (__lc('java.util.ObservableCollection'))("1");
+          nextPage.add(new (__lc('table.Person'))("11" + Math.random(), "张三1" + Math.random(), "山东高密", 65));
+          nextPage.add(new (__lc('table.Person'))("21" + Math.random(), "张三11" + Math.random(), "山东高密1", 65));
+          nextPage.add(new (__lc('table.Person'))("31" + Math.random(), "张三21" + Math.random(), "山东高密2", 65));
+          nextPage.add(new (__lc('table.Person'))("41" + Math.random(), "张三31" + Math.random(), "山东高密2", 65));
+          if(this.persons != null)
+          {
+            this.persons.clear();
+          }
+          this.persons.addAll(nextPage);
+        }).bind(this);
+        this.selectAll = (function(event){
+          if(this.persons != null)
+          {
+            var flag = this.select.checked;
+            var __coll = this.persons, __i = __coll.iterator();
+            while(__i.hasNext()) {
+              var person = __i.next();
+              person.selected = flag;
+            }
+          }
+        }).bind(this);
+        this._allSelected = false;
+        this._listeners = new Object();
+        this._persons.add(new (__lc('table.Person'))("1", "张三", "山东高密", 65));
+        this._persons.add(new (__lc('table.Person'))("2", "张三1", "山东高密1", 65));
+        this._persons.add(new (__lc('table.Person'))("3", "张三2", "山东高密2", 65));
+        this._persons.add(new (__lc('table.Person'))("4", "张三3", "山东高密2", 65));
+        this.addPropertyChangeListener("allSelected", this.onSelectedAll.bind(this));
+      }
+      TableDemo.prototype.__proto__ = Object.prototype;
+      __cache["table.TableDemo"] = TableDemo;
+      Object.defineProperty(TableDemo.prototype, "persons", {
+        get : function() {
+          return this._persons;
+        }, 
+        set : function(value) {
+          this._persons = value;
+        }
+      });
+      Object.defineProperty(TableDemo.prototype, "allSelected", {
+        get : function() {
+          return this._allSelected;
+        }, 
+        set : function(value) {
+          if(this._allSelected === value)
+          {
+            return;
+          }
+          this._allSelected = value;
+          this.propertyChanged("allSelected");
+        }
+      });
+      TableDemo.prototype.propertyChanged = function(propName){
+        var event = new (__lc('java.lang.PropertyChangeEvent'))(propName);
+        var listeners = this._listeners[propName];
+        if(listeners == null)
+        {
+          return;
+        }
+        listeners.forEach((function(h, index, array){
+          h(this, event);
+        }).bind(this));
+      };
+      TableDemo.prototype.addPropertyChangeListener = function(propName, handler){
+        var listeners = this._listeners[propName];
+        if(listeners == null)
+        {
+          listeners = new Array();
+          this._listeners[propName] = listeners;
+        }
+        listeners.push(handler);
+      };
+      TableDemo.prototype.removePropertyChangeListener = function(propName, handler){
+        var listeners = this._listeners[propName];
+        if(listeners == null)
+        {
+          return;
+        }
+        listeners.forEach((function(h, index, array){
+          if(handler === h)
+          {
+            listeners.splice(index, 1);
+          }
+        }).bind(this));
+      };
+      TableDemo.prototype.onSelectedAll = function(source, evt){
+        if(this.persons != null)
+        {
+          var flag = source[evt.propertyName];
+          var __coll = this.persons, __i = __coll.iterator();
+          while(__i.hasNext()) {
+            var person = __i.next();
+            person.selected = flag;
+          }
+        }
+      };
+      TableDemo.prototype.__class = new (__lc('java.lang.Class'))("table.TableDemo", TableDemo, Object.prototype.__class, [__lc("java.lang.INotifyPropertyChanged").prototype.__class], 1);
+      return  TableDemo;
+    })())();
+  </script>
+  </head>
+  <body>
+  <script type = 'text/javascript' >
+  var _c = document.createElement.bind(document);
+  var _a = Node.prototype.appendChild;
+    (function(_p){
+      var _n = _c("table");
+      _p.appendChild(_n);
+      (function(_p){
+        var _n = _c("thead");
+        _p.appendChild(_n);
+        _n.className = "tabs";
+        (function(_p){
+          var _n = _c("td");
+          _p.appendChild(_n);
+          (function(_p){
+            var _n = _c("input");
+            _p.appendChild(_n);
+            _n["name"] = "select";
+            this.select = _n;
+            _n.type = "checkbox";
+            _n.checked = new (__lc("java.lang.Binding"))({property : "allSelected", mode : __lc("java.lang.BindingMode").TwoWay, updateSourceTrigger : __lc("java.lang.UpdateSourceTrigger").PropertyChanged}).provideValue(_n, "checked", null);
+          }).call(__this, _n);
+          var _n = _c("td");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("\r\n						序号\r\n					"));
+          }).call(__this, _n);
+          var _n = _c("td");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("\r\n						姓名\r\n					"));
+          }).call(__this, _n);
+          var _n = _c("td");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("\r\n						地址\r\n					"));
+          }).call(__this, _n);
+          var _n = _c("td");
+          _p.appendChild(_n);
+          (function(_p){
+            _p.appendChild(document.createTextNode("\r\n						年龄\r\n					"));
+          }).call(__this, _n);
+        }).call(__this, _n);
+        var _n = _c("tbody");
+        _p.appendChild(_n);
+        _n.className = "tabs";
+        _n.itemsConfig = new (__lc("java.lang.ItemsConfig"))({path : "persons", itemTemplate : __lc("table.TableRow", "table.TableRow").prototype.__class}).provideValue(_n, "itemsConfig", null);
+      }).call(__this, _n);
+      var _n = _c("button");
+      _p.appendChild(_n);
+      _n.addEventListener('click', this.addChild, false);
+      (function(_p){
+        _p.appendChild(document.createTextNode("\r\n			add\r\n			"));
+      }).call(__this, _n);
+      var _n = _c("button");
+      _p.appendChild(_n);
+      _n.addEventListener('click', this.deleteChild, false);
+      (function(_p){
+        _p.appendChild(document.createTextNode("\r\n			delete\r\n			"));
+      }).call(__this, _n);
+      var _n = _c("button");
+      _p.appendChild(_n);
+      _n.addEventListener('click', this.nextPage, false);
+      (function(_p){
+        _p.appendChild(document.createTextNode("\r\n			delete\r\n			"));
+      }).call(__this, _n);
+    }).call(__this, document.body);</script>
+  </body>
+</html>

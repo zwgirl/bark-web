@@ -23,7 +23,7 @@
     copyFrom.call(this, collection);
   }
   };
-  ObservableCollection.prototype.__proto__ = __lc("java.util.ArrayList").prototype;
+  ObservableCollection.prototype.__proto__ = __lc("java.util.ArrayList", "java.util.ArrayList").prototype;
   __cache["java.util.ObservableCollection"] = ObservableCollection;
   function copyFrom(collection){
     if(collection != null)
@@ -40,19 +40,19 @@
     this.moveItem(oldIndex, newIndex);
   };
   ObservableCollection.prototype.clear = function(){
-    __lc("java.util.ArrayList").prototype.clear.call(this);
+    __lc("java.util.ArrayList", "java.util.ArrayList").prototype.clear.call(this);
     this.onPropertyChanged(this, new (__lc('java.lang.PropertyChangeEvent'))(ObservableCollection.SIZE));
     onCollectionReset.call(this);
   };
   ObservableCollection.prototype.removeAt = function(index){
     var removedItem = this.get(index);
-    __lc("java.util.ArrayList").prototype.removeAt.call(this, index);
+    __lc("java.util.ArrayList", "java.util.ArrayList").prototype.removeAt.call(this, index);
     this.onPropertyChanged(this, new (__lc('java.lang.PropertyChangeEvent'))(ObservableCollection.SIZE));
     onCollectionChanged3.call(this, __lc("java.lang.CollectionChangedAction").Remove, removedItem, index);
     return removedItem;
   };
   ObservableCollection.prototype.remove = function(o){
-    if(__lc("java.util.ArrayList").prototype.remove.call(this, o))
+    if(__lc("java.util.ArrayList", "java.util.ArrayList").prototype.remove.call(this, o))
     {
       this.onPropertyChanged(this, new (__lc('java.lang.PropertyChangeEvent'))(ObservableCollection.SIZE));
       onCollectionChanged3.call(this, __lc("java.lang.CollectionChangedAction").Remove, o, - 1);
@@ -62,7 +62,7 @@
     return false;
   };
   ObservableCollection.prototype.add = function(t){
-    if(__lc("java.util.ArrayList").prototype.add.call(this, t))
+    if(__lc("java.util.ArrayList", "java.util.ArrayList").prototype.add.call(this, t))
     {
       var i = this.size;
       this.onPropertyChanged(this, new (__lc('java.lang.PropertyChangeEvent'))(ObservableCollection.SIZE));
@@ -72,20 +72,28 @@
     return false;
   };
   ObservableCollection.prototype.addAt = function(index, item){
-    __lc("java.util.ArrayList").prototype.addAt.call(this, index, item);
+    __lc("java.util.ArrayList", "java.util.ArrayList").prototype.addAt.call(this, index, item);
     this.onPropertyChanged(this, new (__lc('java.lang.PropertyChangeEvent'))(ObservableCollection.SIZE));
     onCollectionChanged3.call(this, __lc("java.lang.CollectionChangedAction").Add, item, index);
   };
+  ObservableCollection.prototype.addAll = function(c){
+    return this.addAllAt(0, c);
+  };
+  ObservableCollection.prototype.addAllAt = function(index, c){
+    var result = __lc("java.util.ArrayList", "java.util.ArrayList").prototype.addAllAt.call(this, index, c);
+    this.onCollectionChanged(new (__lc('java.lang.CollectionChangedEvent'))(__lc("java.lang.CollectionChangedAction").Add, c.toArray(), index, "5"));
+    return result;
+  };
   ObservableCollection.prototype.set = function(index, item){
     var originalItem = this.get(index);
-    __lc("java.util.ArrayList").prototype.set.call(this, index, item);
+    __lc("java.util.ArrayList", "java.util.ArrayList").prototype.set.call(this, index, item);
     this.onPropertyChanged(this, new (__lc('java.lang.PropertyChangeEvent'))(ObservableCollection.SIZE));
     onCollectionChanged41.call(this, __lc("java.lang.CollectionChangedAction").Replace, originalItem, item, index);
     return originalItem;
   };
   ObservableCollection.prototype.moveItem = function(oldIndex, newIndex){
-    var removedItem = __lc("java.util.ArrayList").prototype.removeAt.call(this, oldIndex);
-    __lc("java.util.ArrayList").prototype.addAt.call(this, newIndex, removedItem);
+    var removedItem = __lc("java.util.ArrayList", "java.util.ArrayList").prototype.removeAt.call(this, oldIndex);
+    __lc("java.util.ArrayList", "java.util.ArrayList").prototype.addAt.call(this, newIndex, removedItem);
     onCollectionChanged4.call(this, __lc("java.lang.CollectionChangedAction").Move, removedItem, newIndex, oldIndex);
   };
   ObservableCollection.prototype.onPropertyChanged = function(source, e){
@@ -102,7 +110,7 @@
   };
   ObservableCollection.prototype.onCollectionChanged = function(e){
     this.collectionChangedListeners.forEach((function(callback, index, array){
-      callback(e);
+      callback(this, e);
     }).bind(this));
   };
   function onCollectionChanged3(action, item, index){
@@ -152,6 +160,6 @@
   };
   ObservableCollection.serialVersionUID = 1;
   ObservableCollection.SIZE = "size";
-  ObservableCollection.prototype.__class = new (__lc('java.lang.Class'))("java.util.ObservableCollection", ObservableCollection, __lc("java.util.ArrayList").prototype.__class, [__lc("java.lang.INotifyCollectionChanged").prototype.__class, __lc("java.util.List").prototype.__class, __lc("java.lang.INotifyPropertyChanged").prototype.__class], 1);
+  ObservableCollection.prototype.__class = new (__lc('java.lang.Class'))("java.util.ObservableCollection", ObservableCollection, __lc("java.util.ArrayList", "java.util.ArrayList").prototype.__class, [__lc("java.lang.INotifyCollectionChanged").prototype.__class, __lc("java.util.List").prototype.__class, __lc("java.lang.INotifyPropertyChanged").prototype.__class], 1);
   return  ObservableCollection;
 })();
